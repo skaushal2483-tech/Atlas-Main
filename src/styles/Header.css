@@ -1,0 +1,365 @@
+/* =================================
+   DASHBOARD HEADER
+================================= */
+
+.dashboard-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 28px 32px 36px;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease,
+    border-color 0.5s ease;
+}
+
+
+/* =================================
+   WELCOME
+================================= */
+
+.header-welcome {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+  min-width: 0;
+}
+
+.header-welcome p {
+  margin: 0 0 8px;
+
+  color: var(--primary);
+
+  font-size: 20px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.header-welcome h1 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: clamp(30px, 3vw, 42px);
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+}
+
+.header-welcome span {
+  display: block;
+
+  margin-top: 10px;
+
+  color: var(--text2);
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
+/* =================================
+   STREAK AREA
+================================= */
+
+.header-right {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+
+  margin-left: 40px;
+}
+
+
+/* =================================
+   STREAK CARD
+================================= */
+
+.streak-card {
+  width: 500px;
+
+  padding: 18px 22px;
+
+  background-color: var(--card);
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease,
+    border-color 0.3s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.streak-card:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--primary);
+
+}
+
+
+/* =================================
+   STREAK TOP
+================================= */
+
+.streak-top {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.streak-fire {
+  font-size: 25px;
+  line-height: 1;
+}
+
+.streak-top p {
+  margin: 0 0 3px;
+
+  color: var(--text2);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.streak-top h2 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: 26px;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+.streak-top h2 span {
+  color: var(--text2);
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+/* =================================
+   WEEK DAYS
+================================= */
+
+.streak-week,
+.streak-status {
+  display: grid;
+
+  grid-template-columns: repeat(7, 1fr);
+
+  gap: 7px;
+
+  text-align: center;
+}
+
+.streak-week {
+  margin-top: 18px;
+
+  color: var(--text2);
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.streak-status {
+  margin-top: 7px;
+}
+
+
+/* =================================
+   WEEK STATUS
+================================= */
+
+.streak-status b,
+.streak-status i {
+  width: 18px;
+  height: 18px;
+
+  display: grid;
+  place-items: center;
+
+  margin: auto;
+
+  border-radius: 50%;
+
+  font-size: 9px;
+  font-style: normal;
+}
+
+.streak-status b {
+  background-color: var(--primary);
+
+  color: #ffffff;
+}
+
+.streak-status i {
+  background-color: transparent;
+
+  border: 1px solid var(--border);
+}
+
+
+/* =================================
+   RESPONSIVE — 1000px
+================================= */
+
+@media (max-width: 1000px) {
+
+  .dashboard-header {
+    padding: 26px 28px 32px;
+  }
+
+  .header-right {
+    margin-left: 25px;
+  }
+
+  .streak-card {
+    width: 300px;
+  }
+
+}
+
+
+/* =================================
+   RESPONSIVE — 800px
+================================= */
+
+@media (max-width: 800px) {
+
+  .dashboard-header {
+    align-items: flex-start;
+  }
+
+  .header-welcome h1 {
+    font-size: 34px;
+  }
+
+  .header-right {
+    margin-left: 20px;
+  }
+
+  .streak-card {
+    width: 280px;
+  }
+
+}
+
+
+/* =================================
+   RESPONSIVE — 700px
+================================= */
+
+@media (max-width: 700px) {
+
+  .dashboard-header {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 24px;
+
+    padding: 22px 18px 28px;
+  }
+
+  .header-welcome {
+    width: 100%;
+  }
+
+  .header-welcome p {
+    font-size: 16px;
+  }
+
+  .header-welcome h1 {
+    font-size: 30px;
+  }
+
+  .header-welcome span {
+    font-size: 14px;
+  }
+
+  .header-right {
+    width: 100%;
+
+    margin-left: 0;
+  }
+
+  .streak-card {
+    width: 100%;
+  }
+
+}
+
+
+/* =================================
+   RESPONSIVE — 500px
+================================= */
+
+@media (max-width: 500px) {
+
+  .dashboard-header {
+    gap: 20px;
+
+    padding: 18px 16px 24px;
+  }
+
+  .header-welcome p {
+    margin-bottom: 7px;
+
+    font-size: 13px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .header-welcome h1 {
+    font-size: 25px;
+
+    letter-spacing: -1px;
+  }
+
+  .header-welcome span {
+    font-size: 13px;
+  }
+
+  .streak-card {
+    padding: 16px;
+  }
+
+  .streak-top h2 {
+    font-size: 23px;
+  }
+
+  .streak-week,
+  .streak-status {
+    gap: 4px;
+  }
+
+  .streak-status b,
+  .streak-status i {
+    width: 16px;
+    height: 16px;
+  }
+
+}

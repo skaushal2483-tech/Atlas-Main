@@ -1,4 +1,5 @@
 import "../styles/SideBar.css";
+import ThemeToggle from "./ThemeToggle";
 
 function SideBar() {
   return (
@@ -16,6 +17,10 @@ function SideBar() {
         <a>Membership</a>
         <a>Settings</a>
       </nav>
+
+      <div className="sidebar-theme">
+        <ThemeToggle />
+      </div>
     </aside>
   );
 }
