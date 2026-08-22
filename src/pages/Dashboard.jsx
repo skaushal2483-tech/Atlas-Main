@@ -1,8 +1,8 @@
 import SideBar from "../components/SideBar";
 import Header from "../components/Header";
+import Metrics from "../components/Metrics";
+
 import "../styles/Dashboard.css";
-
-
 
 function Dashboard() {
   return (
@@ -11,6 +11,8 @@ function Dashboard() {
 
       <main className="dashboard-main">
         <Header />
+        
+        <Metrics/>
       </main>
     </div>
   );
