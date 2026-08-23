@@ -1,12 +1,12 @@
-import SideBar from "../components/SideBar";
-import CommunityHero from "../components/CommunityHero";
-import CreatePost from "../components/CreatePost";
-import Leaderboard from "../components/Leaderboard";
-import Trending from "../components/Trending";
-import Filters from "../components/Filters";
-import Posts from "../components/Posts";
+import SideBar from "../components/community/SideBar";
+import CommunityHero from "../components/community/CommunityHero";
+import CreatePost from "../components/community/CreatePost";
+import Leaderboard from "../components/community/Leaderboard";
+import Trending from "../components/community/Trending";
+import Filters from "../components/community/Filters";
+import Posts from "../components/community/Posts";
 
-import "../styles/Community.css";
+import "../styles/community/Community.css";
 
 function Community() {
   return (

@@ -1,0 +1,423 @@
+/* =========================================
+   COMMUNITY HERO
+========================================= */
+
+.community-hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 330px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: 20px;
+
+  background: var(--card);
+
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   BACKGROUND IMAGE
+========================================= */
+
+.community-hero-image {
+  position: absolute;
+
+  inset: 0;
+
+  background-image: url("/images/community.png");
+
+  background-size: cover;
+
+  background-position: center right;
+
+  transform: scale(1.01);
+}
+
+
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
+
+.community-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+
+      rgba(0, 0, 0, 0.99) 0%,
+
+      rgba(0, 0, 0, 0.97) 22%,
+
+      rgba(0, 0, 0, 0.88) 40%,
+
+      rgba(0, 0, 0, 0.65) 58%,
+
+      rgba(0, 0, 0, 0.28) 78%,
+
+      rgba(0, 0, 0, 0.16) 100%
+    );
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.community-hero-content {
+  position: relative;
+  z-index: 2;
+
+  min-height: 330px;
+  padding: 46px 68px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.community-hero-heading {
+  width: 100%;
+  max-width: 650px;
+}
+
+
+/* =========================================
+   ATLAS COMMUNITY
+========================================= */
+
+.community-hero-eyebrow {
+  display: block;
+
+  margin-bottom: 16px;
+
+  color: var(--primary);
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+  letter-spacing: 3.5px;
+
+  line-height: 1;
+
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+
+/* =========================================
+   MAIN TAGLINE
+========================================= */
+
+.community-hero-tagline {
+  margin: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  color: #ffffff;
+
+  font-size: clamp(42px, 4vw, 60px);
+
+  font-weight: 500;
+
+  font-style: italic;
+
+  line-height: 0.98;
+
+  letter-spacing: -2.5px;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.community-hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+
+  margin-top: 42px;
+}
+
+
+/* =========================================
+   STAT CARD
+========================================= */
+
+.community-stat-card {
+  width: 190px;
+
+  min-height: 82px;
+
+  padding: 16px 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--card) 88%,
+      transparent
+    );
+
+  backdrop-filter: blur(14px);
+
+
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.community-stat-card:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--primary);
+
+  background: var(--surface);
+
+
+}
+
+
+/* =========================================
+   STAT INFORMATION
+========================================= */
+
+.community-stat-info {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.community-stat-info strong {
+  color: var(--primary);
+
+  font-size: 25px;
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.community-stat-info span {
+  color: var(--text2);
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .community-hero {
+    min-height: 320px;
+  }
+
+  .community-hero-content {
+    min-height: 320px;
+
+    padding: 38px;
+  }
+
+  .community-hero-eyebrow {
+    font-size: 14px;
+
+    letter-spacing: 3px;
+  }
+
+  .community-hero-tagline {
+    font-size: 43px;
+
+    letter-spacing: -1.8px;
+  }
+
+  .community-hero-stats {
+    margin-top: 30px;
+
+    gap: 14px;
+
+    max-width: 620px;
+  }
+
+  .community-stat-card {
+    width: 175px;
+
+    min-height: 76px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .community-hero {
+    min-height: 350px;
+  }
+
+  .community-hero-content {
+    min-height: 350px;
+
+    padding: 30px 26px;
+  }
+
+  .community-hero-eyebrow {
+    margin-bottom: 14px;
+
+    font-size: 12px;
+
+    letter-spacing: 2.5px;
+  }
+
+  .community-hero-tagline {
+    font-size: 34px;
+
+    letter-spacing: -1.2px;
+
+    line-height: 1;
+  }
+
+  .community-hero-stats {
+    margin-top: 28px;
+
+    gap: 10px;
+  }
+
+  .community-stat-card {
+    width: 155px;
+
+    min-height: 70px;
+
+    padding: 12px;
+  }
+
+  .community-stat-info strong {
+    font-size: 23px;
+  }
+
+  .community-stat-info span {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+  .community-hero {
+    min-height: 360px;
+  }
+
+  .community-hero-content {
+    min-height: 360px;
+
+    padding: 26px 20px;
+  }
+
+  .community-hero-eyebrow {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+  .community-hero-tagline {
+    font-size: 29px;
+
+    letter-spacing: -0.8px;
+  }
+
+  .community-hero-stats {
+    gap: 8px;
+
+    margin-top: 24px;
+  }
+
+  .community-stat-card {
+    width: auto;
+
+    flex: 1;
+
+    min-width: 0;
+
+    min-height: 66px;
+
+    padding: 10px;
+  }
+
+  .community-stat-info strong {
+    font-size: 21px;
+  }
+
+  .community-stat-info span {
+    font-size: 9px;
+  }
+}
