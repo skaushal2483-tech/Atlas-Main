@@ -1,4 +1,4 @@
-import "../styles/StatsCards.css";
+import "../../styles/dashboard/StatsCards.css";
 
 function AnalyticsGrid() {
   return (

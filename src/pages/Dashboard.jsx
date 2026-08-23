@@ -1,9 +1,10 @@
-import SideBar from "../components/SideBar";
-import Header from "../components/Header";
-import StatsCards from "../components/StatsCards";
-import Metrics from "../components/Metrics";
+import SideBar from "../components/dashboard/SideBar";
+import Header from "../components/dashboard/Header";
+import StatsCards from "../components/dashboard/StatsCards";
+import PersonalRecords from "../components/dashboard/PersonalRecords";
+import Metrics from "../components/dashboard/Metrics";
 
-import "../styles/Dashboard.css";
+import "../styles/dashboard/Dashboard.css";
 
 function Dashboard() {
   return (
@@ -16,6 +17,8 @@ function Dashboard() {
         <Metrics/>
 
         <StatsCards />
+
+        <PersonalRecords/>
       </main>
     </div>
   );

@@ -1,9 +1,9 @@
-import DashBoard from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
-    <DashBoard />
-  );
+    <Dashboard />
+  )
 }
 
 export default App;

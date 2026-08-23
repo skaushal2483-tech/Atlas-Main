@@ -1,4 +1,4 @@
-import "../styles/PersonalRecords.css";
+import "../../styles/dashboard/PersonalRecords.css";
 
 function PersonalRecords() {
   return (

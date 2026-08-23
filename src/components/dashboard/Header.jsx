@@ -1,4 +1,5 @@
-import "../styles/Header.css";
+import "../../styles/dashboard/Header.css";
+import ThemeToggle from "../shared/ThemeToggle";
 
 function Header() {
   return (

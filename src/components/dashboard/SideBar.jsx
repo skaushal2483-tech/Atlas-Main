@@ -1,5 +1,5 @@
-import "../styles/SideBar.css";
-import ThemeToggle from "./ThemeToggle";
+import "../../styles/dashboard/SideBar.css";
+import ThemeToggle from "../shared/ThemeToggle";
 
 function SideBar() {
   return (
