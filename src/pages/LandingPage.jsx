@@ -1,9 +1,6 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Stats from "../components/Stats";
-import Why from "../components/Why";
-import Programs from "../components/Programs";
-import Memberships from "../components/Memberships";
 import Footer from "../components/Footer";
 
 function LandingPage({ isDark, setIsDark }) {
@@ -17,9 +14,6 @@ function LandingPage({ isDark, setIsDark }) {
       <main>
         <Hero isDark={isDark} />
         <Stats />
-        <Why/>
-        <Programs/>
-        <Memberships/>
       </main>
       <footer>
         <Footer/>
