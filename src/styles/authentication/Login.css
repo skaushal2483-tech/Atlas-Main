@@ -1,0 +1,222 @@
+/* =================================
+   LOGIN CARD
+================================= */
+
+.login-card {
+  width: min(100%, 430px);
+
+  padding: 48px 44px 42px;
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  box-sizing: border-box;
+}
+
+
+/* =================================
+   TITLE
+================================= */
+
+.login-title {
+  margin: 0 0 34px;
+
+  color: var(--text);
+
+  font-size: 24px;
+  font-weight: 850;
+
+  text-align: center;
+
+  letter-spacing: 0.5px;
+}
+
+.login-title span {
+  color: var(--primary);
+}
+
+
+/* =================================
+   FORM
+================================= */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+/* =================================
+   FIELD
+================================= */
+
+.login-field {
+  width: 100%;
+}
+
+
+/* =================================
+   INPUT
+================================= */
+
+.login-field input {
+  width: 100%;
+  height: 52px;
+
+  padding: 0 17px;
+
+  border: 1px solid var(--border);
+  border-radius: 9px;
+
+  background: var(--surface);
+  color: var(--text);
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+
+  outline: none;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.login-field input::placeholder {
+  color: var(--text2);
+}
+
+.login-field input:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--primary) 35%,
+    var(--border)
+  );
+}
+
+.login-field input:focus {
+  border-color: var(--primary);
+
+  background: var(--card);
+}
+
+
+/* =================================
+   LOGIN BUTTON
+================================= */
+
+.login-submit {
+  width: 100%;
+  height: 52px;
+
+  margin-top: 8px;
+
+  border: 1px solid var(--primary);
+  border-radius: 9px;
+
+  background: var(--primary);
+  color: #fff;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.login-submit:hover {
+  transform: translateY(-1px);
+
+  background: var(--hover);
+}
+
+.login-submit:active {
+  transform: translateY(0);
+}
+
+
+/* =================================
+   SWITCH
+================================= */
+
+.login-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 27px;
+
+  color: var(--text2);
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.login-switch button {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+  color: var(--primary);
+
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 750;
+
+  cursor: pointer;
+}
+
+.login-switch button:hover {
+  color: var(--hover);
+}
+
+/* =================================
+   VALIDATION ERRORS
+================================= */
+
+.login-error {
+  margin: 6px 0 0;
+
+  color: var(--primary);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  line-height: 1.3;
+}
+
+.login-submit-error {
+  margin: 0;
+
+  text-align: center;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+  .login-card {
+    padding: 40px 25px 36px;
+
+    border-radius: 15px;
+  }
+
+  .login-title {
+    margin-bottom: 30px;
+  }
+}

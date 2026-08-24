@@ -10,12 +10,6 @@ function App() {
   }, [isDark]);
 
   return (
-    // <LandingPage
-    //   isDark={isDark}
-    //   setIsDark={setIsDark}
-    // />
-    // <Dashboard />
-    // <Community />
     <Auth />
   );
 }
