@@ -1,16 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LandingPage from "./pages/LandingPage";
+import Dashboard from "./pages/Dashboard";
+import Community from "./pages/Community";
+import Auth from "./pages/Authentication"
 
 function App() {
   const [isDark, setIsDark] = useState(false);
 
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDark);
+  }, [isDark]);
+
   return (
-    <div className={isDark ? "dark" : "light"}>
-      <LandingPage
-        isDark={isDark}
-        setIsDark={setIsDark}
-      />
-    </div>
+    // <LandingPage
+    //   isDark={isDark}
+    //   setIsDark={setIsDark}
+    // />
+    // <Dashboard />
+    // <Community />
+    <Auth />
   );
 }
 

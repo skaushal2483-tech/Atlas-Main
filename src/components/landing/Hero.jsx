@@ -10,7 +10,7 @@ function Hero({ isDark }) {
         loop
         playsInline
       >
-        <source src="/videos/HeroLight.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/faxly6vc/video/upload/v1787239805/atlas_light.mp4" type="video/mp4" />
       </video>
 
       <video

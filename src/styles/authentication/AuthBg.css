@@ -1,0 +1,108 @@
+/* =================================
+   AUTH PAGE
+================================= */
+
+.auth-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+}
+
+
+/* =================================
+   AUTH BACKGROUND
+================================= */
+
+.auth-bg {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: var(--bg);
+
+  overflow: hidden;
+
+  z-index: 0;
+}
+
+
+/* =================================
+   IMAGE
+================================= */
+
+.auth-bg::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image: url("./images/auth.png");
+
+  background-size: cover;
+
+  /* Move image slightly left */
+  background-position: 38% center;
+
+  background-repeat: no-repeat;
+
+  transform: scale(1.08);
+
+  z-index: 0;
+}
+
+
+/* =================================
+   OVERLAY
+================================= */
+
+.auth-bg-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.38);
+
+  z-index: 1;
+}
+
+
+/* =================================
+   AUTH CONTENT
+================================= */
+
+.auth-content {
+  position: relative;
+
+  z-index: 2;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =================================
+   AUTH MAIN
+================================= */
+
+.auth-main {
+  flex: 1;
+
+  min-height: 760px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  padding: 80px 9%;
+}
