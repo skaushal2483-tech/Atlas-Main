@@ -110,15 +110,15 @@
 }
 
 .powerlifting {
-  background-image: url("/images/BB.jpg");
+  background-image: url("/images/pow.png");
 }
 
 .strongman {
-  background-image: url("/images/BB.jpg");
+  background-image: url("/images/Strongmen.png");
 }
 
 .hyrox {
-  background-image: url("/images/BB.jpg");
+  background-image: url("/images/hyrox.png");
 }
 
 @media (max-width: 700px) {

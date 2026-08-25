@@ -1,11 +1,24 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 import "../../styles/shared/Navbar.css";
 
-function Navbar({ isDark, setIsDark }) {
+function Navbar({
+  isDark,
+  setIsDark,
+  scrollToWhy,
+  scrollToPrograms,
+  scrollToMemberships,
+}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function handleMenuClick() {
     setIsMenuOpen(!isMenuOpen);
+  }
+
+  function handleSectionClick(scrollFunction) {
+    setIsMenuOpen(false);
+    scrollFunction();
   }
 
   useEffect(() => {
@@ -36,15 +49,15 @@ function Navbar({ isDark, setIsDark }) {
     <>
       <nav className="navbar">
         <div className="navbar-logo">
-          ATLAS
+          <img src="/images/atlasLogo_Crimson.png" alt="ATLAS" />
         </div>
 
         <div className="navbar-actions">
           <button
-  className={`theme-button ${isDark ? "nyx" : "eos"}`}
-  onClick={() => setIsDark(!isDark)}
-  aria-label="Switch theme"
-></button>
+            className={`theme-button ${isDark ? "nyx" : "eos"}`}
+            onClick={() => setIsDark(!isDark)}
+            aria-label="Switch theme"
+          ></button>
 
           <button
             className="navbar-button menu-button"
@@ -57,19 +70,40 @@ function Navbar({ isDark, setIsDark }) {
       </nav>
 
       <div className={`menu ${isMenuOpen ? "menu-open" : ""}`}>
-        <a href="#features">Features</a>
-        <a href="#programs">Programs</a>
-        <a href="#exercises">Exercises</a>
-        <a href="#muscle-atlas">Muscle Atlas</a>
-        <a href="#membership">Membership</a>
+
+        <button
+          type="button"
+          onClick={() => handleSectionClick(scrollToWhy)}
+        >
+          Features
+        </button>
+
+        <button
+          type="button"
+          onClick={() => handleSectionClick(scrollToPrograms)}
+        >
+          Programs
+        </button>
+
+        <button
+          type="button"
+          onClick={() =>
+            handleSectionClick(scrollToMemberships)
+          }
+        >
+          Membership
+        </button>
 
         <div className="menu-divider"></div>
 
-        <a href="#login">Login</a>
-
-        <button className="menu-cta">
+        <Link
+          to="/auth"
+          className="menu-cta"
+          onClick={() => setIsMenuOpen(false)}
+        >
           Start Your Journey
-        </button>
+        </Link>
+
       </div>
     </>
   );

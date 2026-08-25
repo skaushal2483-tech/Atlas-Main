@@ -4,7 +4,7 @@ function Why() {
   return (
     <section className="why-atlas">
       <div className="why-atlas-header">
-        <p>WHY ATLAS?</p>
+        <p><i>WHY ATLAS?</i></p>
 
         <h2>
           Built for those who

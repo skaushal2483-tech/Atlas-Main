@@ -1,8 +1,7 @@
 import { useState } from "react";
 
-import Navbar from "../components/shared/Navbar";
 import Footer from "../components/shared/Footer";
-
+import AuthNavbar from "../components/authentication/AuthNavbar";
 import AuthBg from "../components/authentication/AuthBg";
 import Login from "../components/authentication/Login";
 import Signup from "../components/authentication/Signup";
@@ -18,7 +17,7 @@ function Auth() {
       <AuthBg />
 
       <div className="auth-content">
-        <Navbar
+        <AuthNavbar
           isDark={isDark}
           setIsDark={setIsDark}
         />

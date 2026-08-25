@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../../styles/dashboard/SideBar.css";
 import ThemeToggle from "../shared/ThemeToggle";
 
@@ -9,7 +10,14 @@ function SideBar() {
       </div>
 
       <nav className="sidebar-nav">
-        <a className="active">Dashboard</a>
+        <Link to="/dashboard" className="active">
+          Dashboard
+        </Link>
+
+        <Link to="/community">
+          Community
+        </Link>
+
         <a>Workouts</a>
         <a>Programs</a>
         <a>Exercises</a>

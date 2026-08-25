@@ -6,7 +6,7 @@ function Footer() {
 
       <div className="footer-top">
         <div className="footer-logo">
-          ATLAS
+          <img src="/images/atlasLogo_Crimson.png" alt="ATLAS" />
         </div>
 
         <button
