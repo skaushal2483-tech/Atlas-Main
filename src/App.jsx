@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import LandingPage from "./pages/LandingPage";
 import Dashboard from "./pages/Dashboard";
+import Community from "./pages/Community";
 import Auth from "./pages/Authentication"
 
 function App() {
@@ -10,6 +12,12 @@ function App() {
   }, [isDark]);
 
   return (
+    // <LandingPage
+    //   isDark={isDark}
+    //   setIsDark={setIsDark}
+    // />
+    // <Dashboard />
+    // <Community />
     <Auth />
   );
 }
