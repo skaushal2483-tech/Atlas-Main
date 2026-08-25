@@ -40,38 +40,16 @@
   content: "";
 
   position: absolute;
-
   inset: 0;
 
-  background-image: url("./images/auth.png");
+  background-image: url("./images/logimg.png");
 
   background-size: cover;
-
-  /* Move image slightly left */
-  background-position: 38% center;
-
+  background-position: center center;
   background-repeat: no-repeat;
-
-  transform: scale(1.08);
 
   z-index: 0;
 }
-
-
-/* =================================
-   OVERLAY
-================================= */
-
-.auth-bg-overlay {
-  position: absolute;
-
-  inset: 0;
-
-  background: rgba(0, 0, 0, 0.38);
-
-  z-index: 1;
-}
-
 
 /* =================================
    AUTH CONTENT
