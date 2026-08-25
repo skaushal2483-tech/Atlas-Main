@@ -15,11 +15,14 @@
 }
 
 .navbar-logo {
-  color: var(--primary);
+  display: flex;
+  align-items: center;
+}
 
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: 1px;
+.navbar-logo img {
+  width: 120px;
+  height: 90px;
+  display: block;
 }
 
 .navbar-actions {
@@ -147,6 +150,7 @@
 
 .menu .menu-cta:hover {
   background-color: var(--hover);
+  color : white;
   transform: translateY(-1px);
 }
 

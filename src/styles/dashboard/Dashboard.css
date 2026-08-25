@@ -13,26 +13,11 @@
   background: var(--bg);
   color: var(--text);
 
+  box-sizing: border-box;
+
   transition:
     background-color 0.5s ease,
     color 0.5s ease;
-}
-
-
-/* =================================
-   SIDEBAR
-================================= */
-
-.sidebar {
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  width: 240px;
-  height: 100vh;
-
-  z-index: 20;
 }
 
 
@@ -41,23 +26,21 @@
 ================================= */
 
 .dashboard-main {
-  width: calc(100% - 240px);
+  flex: 1;
+  min-width: 0;
   min-height: 100vh;
-
-  margin-left: 240px;
 
   overflow-y: auto;
   overflow-x: hidden;
 
   background: var(--bg);
+  color: var(--text);
+
+  box-sizing: border-box;
 
   transition:
     background-color 0.5s ease,
     color 0.5s ease;
-}
-
-.analytics-grid {
-  padding-top: 50px;
 }
 
 
@@ -75,7 +58,6 @@
 
 .dashboard-main::-webkit-scrollbar-thumb {
   background: var(--border);
-
   border-radius: 10px;
 }
 
@@ -85,57 +67,13 @@
 
 
 /* =================================
-   RESPONSIVE — 900px
-================================= */
-
-@media (max-width: 900px) {
-
-  .sidebar {
-    width: 210px;
-  }
-
-  .dashboard-main {
-    width: calc(100% - 210px);
-
-    margin-left: 210px;
-  }
-
-}
-
-
-/* =================================
-   RESPONSIVE — 700px
+   MOBILE / TABLET
 ================================= */
 
 @media (max-width: 700px) {
 
-  .sidebar {
-    width: 76px;
-  }
-
   .dashboard-main {
-    width: calc(100% - 76px);
-
-    margin-left: 76px;
-  }
-
-}
-
-
-/* =================================
-   RESPONSIVE — 500px
-================================= */
-
-@media (max-width: 500px) {
-
-  .sidebar {
-    width: 68px;
-  }
-
-  .dashboard-main {
-    width: calc(100% - 68px);
-
-    margin-left: 68px;
+    min-width: 0;
   }
 
 }

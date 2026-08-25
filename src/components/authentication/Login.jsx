@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import "../../styles/authentication/Login.css";
 
 function Login({ onSwitch }) {
@@ -14,21 +16,19 @@ function Login({ onSwitch }) {
   function handleChange(event) {
     const { name, value } = event.target;
 
-    setFormData({
-      ...formData,
+    setFormData((previous) => ({
+      ...previous,
       [name]: value,
-    });
+    }));
 
-    setErrors({
-      ...errors,
+    setErrors((previous) => ({
+      ...previous,
       [name]: "",
       submit: "",
-    });
+    }));
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-
+  function handleLogin(event) {
     const email = formData.email.trim().toLowerCase();
     const password = formData.password;
 
@@ -45,6 +45,7 @@ function Login({ onSwitch }) {
     }
 
     if (Object.keys(newErrors).length > 0) {
+      event.preventDefault();
       setErrors(newErrors);
       return;
     }
@@ -52,6 +53,8 @@ function Login({ onSwitch }) {
     const storedUser = localStorage.getItem("atlasUser");
 
     if (!storedUser) {
+      event.preventDefault();
+
       setErrors({
         submit: "No account found. Please sign up first.",
       });
@@ -65,6 +68,8 @@ function Login({ onSwitch }) {
       user.email !== email ||
       user.password !== password
     ) {
+      event.preventDefault();
+
       setErrors({
         submit: "Incorrect email or password.",
       });
@@ -82,14 +87,7 @@ function Login({ onSwitch }) {
       })
     );
 
-    setFormData({
-      email: "",
-      password: "",
-    });
-
     setErrors({});
-
-    console.log("Login successful");
   }
 
   return (
@@ -99,11 +97,7 @@ function Login({ onSwitch }) {
         Train. Track. <span>Improve.</span>
       </h1>
 
-      <form
-        className="login-form"
-        onSubmit={handleSubmit}
-        noValidate
-      >
+      <div className="login-form">
 
         <div className="login-field">
           <input
@@ -147,14 +141,15 @@ function Login({ onSwitch }) {
           </p>
         )}
 
-        <button
+        <Link
+          to="/dashboard"
           className="login-submit"
-          type="submit"
+          onClick={handleLogin}
         >
           Login
-        </button>
+        </Link>
 
-      </form>
+      </div>
 
       <div className="login-switch">
         <span>Don't have an account?</span>

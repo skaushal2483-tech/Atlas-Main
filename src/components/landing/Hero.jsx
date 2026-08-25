@@ -1,4 +1,6 @@
 import "../../styles/landing/Hero.css";
+import { Link } from "react-router-dom";
+
 
 function Hero({ isDark }) {
   return (
@@ -35,9 +37,9 @@ function Hero({ isDark }) {
           Train with purpose, Track your progress, Become stronger.
         </p>
 
-        <button className="hero-cta">
+        <Link to="/auth" className="hero-cta">
           Start Your Journey <span>→</span>
-        </button>
+        </Link>
       </div>
     </section>
   );

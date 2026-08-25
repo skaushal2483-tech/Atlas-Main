@@ -7,9 +7,14 @@
   color: var(--text);
 
   border-top: 1px solid var(--border);
+
+  box-sizing: border-box;
 }
 
-/* TOP */
+
+/* =================================
+   TOP
+================================= */
 
 .footer-top {
   max-width: 1300px;
@@ -19,18 +24,30 @@
   padding-bottom: 30px;
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
 .footer-logo {
-  color: var(--primary);
-
-  font-size: 26px;
-  font-weight: 800;
-
-  letter-spacing: 2px;
+  display: flex;
+  align-items: flex-start;
 }
+
+.footer-logo img {
+  width: 210px;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+  margin-left: -30px;
+
+}
+
+
+/* =================================
+   BACK TO TOP
+================================= */
 
 .footer-top-button {
   width: 40px;
@@ -67,14 +84,17 @@
   transform: translateY(-2px);
 }
 
-/* MAIN */
+
+/* =================================
+   MAIN
+================================= */
 
 .footer-main {
   max-width: 1300px;
 
   margin: 0 auto;
 
-  padding: 65px 0 75px;
+  padding: 55px 0 75px;
 
   display: flex;
   align-items: center;
@@ -83,7 +103,10 @@
   gap: 80px;
 }
 
-/* LEFT STATEMENT */
+
+/* =================================
+   LEFT STATEMENT
+================================= */
 
 .footer-statement {
   max-width: 600px;
@@ -107,7 +130,10 @@
   color: var(--primary);
 }
 
-/* RIGHT LINKS */
+
+/* =================================
+   RIGHT LINKS
+================================= */
 
 .footer-links {
   min-width: 300px;
@@ -150,7 +176,10 @@
   color: var(--primary);
 }
 
-/* BOTTOM */
+
+/* =================================
+   BOTTOM
+================================= */
 
 .footer-bottom {
   max-width: 1300px;
@@ -180,9 +209,13 @@
   font-weight: 700;
 }
 
-/* TABLET */
+
+/* =================================
+   TABLET
+================================= */
 
 @media (max-width: 900px) {
+
   .footer-main {
     align-items: flex-start;
 
@@ -206,13 +239,26 @@
   .footer-link-group a {
     font-size: 14px;
   }
+
 }
 
-/* MOBILE */
+
+/* =================================
+   MOBILE
+================================= */
 
 @media (max-width: 700px) {
+
   .footer {
     padding: 45px 24px 22px;
+  }
+
+  .footer-top {
+    padding-bottom: 20px;
+  }
+
+  .footer-logo img {
+    width: 170px;
   }
 
   .footer-main {
@@ -248,11 +294,20 @@
 
     gap: 10px;
   }
+
 }
 
-/* SMALL PHONES */
+
+/* =================================
+   SMALL PHONES
+================================= */
 
 @media (max-width: 450px) {
+
+  .footer-logo img {
+    width: 150px;
+  }
+
   .footer-statement h2 {
     font-size: 40px;
   }
@@ -260,4 +315,5 @@
   .footer-links {
     gap: 40px;
   }
+
 }
