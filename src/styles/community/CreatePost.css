@@ -1,7 +1,3 @@
-/* =========================================
-   CREATE POST
-========================================= */
-
 .create-post {
   width: 100%;
   margin-top: 24px;
@@ -18,20 +14,12 @@
 }
 
 
-/* =========================================
-   TOP
-========================================= */
-
 .create-post-top {
   display: flex;
   align-items: center;
   gap: 14px;
 }
 
-
-/* =========================================
-   AVATAR
-========================================= */
 
 .create-post-avatar {
   width: 44px;
@@ -52,10 +40,6 @@
   font-weight: 800;
 }
 
-
-/* =========================================
-   INPUT
-========================================= */
 
 .create-post-input {
   flex: 1;
@@ -90,10 +74,6 @@
 }
 
 
-/* =========================================
-   BOTTOM
-========================================= */
-
 .create-post-bottom {
   margin-top: 15px;
   padding-top: 14px;
@@ -106,10 +86,6 @@
 }
 
 
-/* =========================================
-   HINT
-========================================= */
-
 .create-post-hint {
   color: var(--text2);
 
@@ -117,10 +93,6 @@
   font-weight: 500;
 }
 
-
-/* =========================================
-   POST BUTTON
-========================================= */
 
 .create-post-button {
   min-width: 76px;
@@ -144,40 +116,8 @@
     background 0.2s ease;
 }
 
+
 .create-post-button:hover {
   background: var(--hover);
   transform: translateY(-1px);
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
-
-  .create-post {
-    margin-top: 18px;
-    padding: 15px;
-  }
-
-  .create-post-avatar {
-    width: 38px;
-    height: 38px;
-  }
-
-  .create-post-input {
-    height: 42px;
-    padding: 0 13px;
-
-    font-size: 12px;
-  }
-
-  .create-post-hint {
-    display: none;
-  }
-
-  .create-post-button {
-    padding: 9px 18px;
-  }
 }

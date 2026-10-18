@@ -145,10 +145,6 @@ function Posts() {
                     key={post.id}
                 >
 
-                    {/* =================================
-              HEADER
-          ================================= */}
-
                     <div className="community-post-header">
 
                         <div className="community-post-avatar">
@@ -177,19 +173,10 @@ function Posts() {
 
                     </div>
 
-
-                    {/* =================================
-              CONTENT
-          ================================= */}
-
                     <p className="community-post-content">
                         {post.content}
                     </p>
 
-
-                    {/* =================================
-              ACTIONS
-          ================================= */}
 
                     <div className="community-post-actions">
 

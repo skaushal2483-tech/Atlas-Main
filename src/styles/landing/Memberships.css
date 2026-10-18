@@ -9,6 +9,7 @@
   border-bottom: 1px solid var(--border);
 }
 
+
 .membership-header {
   max-width: 800px;
 
@@ -16,6 +17,7 @@
 
   text-align: center;
 }
+
 
 .membership-header > p {
   margin-bottom: 18px;
@@ -28,6 +30,7 @@
   letter-spacing: 3px;
 }
 
+
 .membership-header h2 {
   margin: 0;
 
@@ -38,11 +41,13 @@
   letter-spacing: -2.5px;
 }
 
+
 .membership-header h2 span {
   display: block;
 
   color: var(--primary);
 }
+
 
 .membership-grid {
   max-width: 1100px;
@@ -54,6 +59,7 @@
 
   gap: 58px;
 }
+
 
 .membership-card {
   min-height: 430px;
@@ -73,11 +79,13 @@
     border-color 0.3s ease;
 }
 
+
 .membership-card:hover {
   transform: translateY(-3px);
 
   border-color: var(--primary);
 }
+
 
 .membership-card-top h3 {
   margin: 0 0 7px;
@@ -90,6 +98,7 @@
   letter-spacing: -0.5px;
 }
 
+
 .membership-card-top p {
   margin: 0;
 
@@ -97,6 +106,7 @@
 
   font-size: 13px;
 }
+
 
 .membership-price {
   display: flex;
@@ -107,6 +117,7 @@
   margin: 38px 0 28px;
 }
 
+
 .membership-price strong {
   font-size: 40px;
   font-weight: 800;
@@ -114,11 +125,13 @@
   letter-spacing: -1.5px;
 }
 
+
 .membership-price span {
   color: var(--text2);
 
   font-size: 12px;
 }
+
 
 .membership-card ul {
   display: flex;
@@ -132,6 +145,7 @@
   list-style: none;
 }
 
+
 .membership-card li {
   position: relative;
 
@@ -143,6 +157,7 @@
   line-height: 1.4;
 }
 
+
 .membership-card li::before {
   content: "✓";
 
@@ -153,6 +168,7 @@
 
   font-weight: 800;
 }
+
 
 .membership-button {
   width: 100%;
@@ -179,20 +195,11 @@
     border-color 0.3s ease;
 }
 
+
 .membership-button:hover {
   background-color: var(--primary);
 
   border-color: var(--primary);
 
   color: white;
-}
-
-@media (max-width: 900px) {
-  .membership {
-    padding: 80px 24px;
-  }
-
-  .membership-grid {
-    grid-template-columns: 1fr;
-  }
 }

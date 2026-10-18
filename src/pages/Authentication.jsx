@@ -1,15 +1,14 @@
 import { useState } from "react";
 
+import Navbar from "../components/shared/Navbar";
 import Footer from "../components/shared/Footer";
-import AuthNavbar from "../components/authentication/AuthNavbar";
 import AuthBg from "../components/authentication/AuthBg";
 import Login from "../components/authentication/Login";
 import Signup from "../components/authentication/Signup";
 
 import "../styles/authentication/Auth.css";
 
-function Auth() {
-  const [isDark, setIsDark] = useState(false);
+function Auth({ isDark, setIsDark }) {
   const [isSignup, setIsSignup] = useState(false);
 
   return (
@@ -17,7 +16,7 @@ function Auth() {
       <AuthBg />
 
       <div className="auth-content">
-        <AuthNavbar
+        <Navbar
           isDark={isDark}
           setIsDark={setIsDark}
         />

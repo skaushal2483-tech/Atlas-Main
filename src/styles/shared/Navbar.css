@@ -14,10 +14,12 @@
   color: var(--text);
 }
 
+
 .navbar-logo {
   display: flex;
   align-items: center;
 }
+
 
 .navbar-logo img {
   width: 120px;
@@ -25,11 +27,13 @@
   display: block;
 }
 
+
 .navbar-actions {
   display: flex;
   align-items: center;
   gap: 16px;
 }
+
 
 .navbar-button {
   border: none;
@@ -42,9 +46,11 @@
   cursor: pointer;
 }
 
+
 .navbar-button:hover {
   color: var(--primary);
 }
+
 
 .menu-button {
   width: 25px;
@@ -59,6 +65,7 @@
   font-size: 26px;
   line-height: 1;
 }
+
 
 .menu {
   position: fixed;
@@ -88,9 +95,11 @@
   overflow-y: auto;
 }
 
+
 .menu-open {
   transform: translateX(0);
 }
+
 
 .menu a,
 .menu button {
@@ -112,10 +121,12 @@
   transition: color 0.25s ease;
 }
 
+
 .menu a:hover,
 .menu button:not(.menu-cta):hover {
   color: var(--primary);
 }
+
 
 .menu-divider {
   width: 100%;
@@ -123,6 +134,7 @@
 
   background-color: var(--border);
 }
+
 
 .menu .menu-cta {
   margin-top: auto;
@@ -148,11 +160,13 @@
     transform 0.4s ease;
 }
 
+
 .menu .menu-cta:hover {
   background-color: var(--hover);
   color : white;
   transform: translateY(-1px);
 }
+
 
 .theme-button {
   width: 25px;
@@ -177,6 +191,7 @@
     border-color 0.5s ease;
 }
 
+
 .dark .theme-button {
   background: linear-gradient(
     to right,
@@ -185,13 +200,16 @@
   );
 }
 
+
 .theme-button.nyx {
   transform: rotate(180deg);
 }
 
+
 .theme-button:hover {
   transform: scale(1.08);
 }
+
 
 .theme-button.nyx:hover {
   transform: rotate(180deg) scale(1.08);

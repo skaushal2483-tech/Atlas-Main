@@ -1,16 +1,9 @@
-import { useState } from "react";
 import "../../styles/shared/ThemeToggle.css";
 
-function ThemeToggle() {
-  const [isDark, setIsDark] = useState(() =>
-    document.documentElement.classList.contains("dark")
-  );
+function ThemeToggle({ isDark, setIsDark }) {
 
   function handleThemeToggle() {
-    const nextTheme = !isDark;
-
-    setIsDark(nextTheme);
-    document.documentElement.classList.toggle("dark", nextTheme);
+    setIsDark(!isDark);
   }
 
   return (

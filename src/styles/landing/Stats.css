@@ -15,6 +15,7 @@
 
 }
 
+
 .stat {
   width: 400px;
   min-height: 170px;
@@ -39,10 +40,12 @@
     border-color 0.3s ease;
 }
 
+
 .stat:hover {
   transform: translateY(-4px);
   border-color: var(--primary);
 }
+
 
 .stat h2 {
   margin: 0 0 10px;
@@ -56,6 +59,7 @@
   letter-spacing: -2px;
 }
 
+
 .stat p {
   margin: 0;
 
@@ -66,35 +70,4 @@
 
   letter-spacing: 2px;
   text-transform: uppercase;
-}
-
-@media (max-width: 1000px) {
-  .stats {
-    gap: 20px;
-    padding: 60px 24px;
-  }
-
-  .stat {
-    width: 28%;
-    min-height: 150px;
-    padding: 24px;
-  }
-
-  .stat h2 {
-    font-size: 40px;
-  }
-}
-
-@media (max-width: 700px) {
-  .stats {
-    flex-direction: column;
-    gap: 20px;
-
-    padding: 50px 24px;
-  }
-
-  .stat {
-    width: min(100%, 340px);
-    min-height: 140px;
-  }
 }

@@ -1,7 +1,3 @@
-/* =========================================
-   TRENDING
-========================================= */
-
 .trending {
   width: 100%;
   padding: 24px;
@@ -15,14 +11,11 @@
 }
 
 
-/* =========================================
-   HEADER
-========================================= */
-
 .trending-header {
   margin: 0 0 18px;
   padding: 0;
 }
+
 
 .trending-title {
   margin: 0;
@@ -34,6 +27,7 @@
   line-height: 1.2;
 }
 
+
 .trending-subtitle {
   margin: 5px 0 0;
 
@@ -44,10 +38,6 @@
   line-height: 1.3;
 }
 
-
-/* =========================================
-   LIST
-========================================= */
 
 .trending-list {
   width: 100%;
@@ -62,10 +52,6 @@
 }
 
 
-/* =========================================
-   ROW
-========================================= */
-
 .trending-row {
   width: 100%;
   min-width: 0;
@@ -79,18 +65,10 @@
 }
 
 
-/* =========================================
-   SUBTLE HOVER
-========================================= */
-
 .trending-row:hover {
   padding-left: 4px;
 }
 
-
-/* =========================================
-   HASHTAG
-========================================= */
 
 .trending-hashtag {
   display: block;
@@ -109,66 +87,7 @@
     color 0.15s ease;
 }
 
+
 .trending-row:hover .trending-hashtag {
   color: var(--primary);
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 1150px) {
-
-  .trending {
-    padding: 22px 20px;
-  }
-
-  .trending-title {
-    font-size: 20px;
-  }
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 800px) {
-
-  .trending {
-    padding: 20px;
-  }
-
-  .trending-row {
-    padding: 10px 0;
-  }
-
-  .trending-hashtag {
-    font-size: 13px;
-  }
-}
-
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 500px) {
-
-  .trending {
-    padding: 18px;
-  }
-
-  .trending-title {
-    font-size: 19px;
-  }
-
-  .trending-subtitle {
-    font-size: 10px;
-  }
-
-  .trending-hashtag {
-    font-size: 13px;
-  }
 }
