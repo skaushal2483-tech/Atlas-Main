@@ -1,4 +1,4 @@
-import { NavLink , Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 
 import "../../styles/shared/Sidebar.css";
@@ -24,9 +24,16 @@ function Sidebar({ isDark, setIsDark }) {
           Community
         </NavLink>
 
+        <NavLink
+          to="/exercises"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Exercises
+        </NavLink>
+
         <a>Workouts</a>
         <a>Programs</a>
-        <a>Exercises</a>
+        
         <a>Progress</a>
         <a>Membership</a>
         <a>Settings</a>

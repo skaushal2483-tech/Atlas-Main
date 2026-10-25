@@ -9,6 +9,7 @@ import LandingPage from "./pages/LandingPage";
 import Dashboard from "./pages/Dashboard";
 import Community from "./pages/Community";
 import Auth from "./pages/Authentication";
+import Exercises from "./pages/Exercises";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -55,6 +56,16 @@ function App() {
           path="/community"
           element={
             <Community
+              isDark={isDark}
+              setIsDark={setIsDark}
+            />
+          }
+        />
+
+        <Route
+          path="/exercises"
+          element={
+            <Exercises
               isDark={isDark}
               setIsDark={setIsDark}
             />

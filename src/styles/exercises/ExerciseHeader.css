@@ -1,0 +1,83 @@
+.exercise-header {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 40px;
+  padding: 30px 20px 34px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  text-align: center;
+}
+
+
+.exercise-header-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 25px;
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 1.6;
+}
+
+.exercise-header-eyebrow-line {
+  width: 25px;
+  height: 1px;
+  background: var(--primary);
+  opacity: 0.8;
+}
+
+
+.exercise-header-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(46px, 5.4vw, 66px);
+  font-weight: 750;
+  letter-spacing: -3.8px;
+  line-height: 1.08;
+}
+
+.exercise-header-title-second {
+  margin-left: 14px;
+  color: var(--primary);
+}
+
+
+
+.exercise-header-description {
+  max-width: 490px;
+  margin: 23px auto 0;
+  color: var(--text2);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  line-height: 2;
+}
+
+
+.exercise-header-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 29px;
+}
+
+.exercise-header-divider-line {
+  width: 28px;
+  height: 1px;
+  background: var(--border);
+}
+
+.exercise-header-divider-mark {
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--primary);
+  transform: rotate(45deg);
+}
