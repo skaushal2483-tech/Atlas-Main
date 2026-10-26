@@ -12,7 +12,6 @@
 }
 
 
-
 .exercises-main {
     flex: 1;
     min-width: 0;
@@ -40,6 +39,7 @@
     gap: 18px;
     margin-bottom: 42px;
 }
+
 
 .exercises-results-heading {
     display: flex;

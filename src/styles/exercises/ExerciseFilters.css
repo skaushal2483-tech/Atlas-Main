@@ -1,3 +1,5 @@
+
+
 .exercise-filters {
   display: flex;
   align-items: center;
@@ -14,7 +16,6 @@
 
   box-sizing: border-box;
 }
-
 
 
 .exercise-filters-heading {
@@ -158,6 +159,7 @@
   z-index: 30;
 }
 
+
 .exercise-filter-menu::-webkit-scrollbar {
   width: 5px;
 }
@@ -206,7 +208,6 @@
   color: var(--primary);
   background: transparent;
 }
-
 
 .exercise-filter-option.active {
   color: var(--primary);
