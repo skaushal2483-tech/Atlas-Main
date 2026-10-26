@@ -1,7 +1,3 @@
-/* =================================
-   AUTH PAGE
-================================= */
-
 .auth-page {
   position: relative;
 
@@ -17,10 +13,6 @@
 }
 
 
-/* =================================
-   CONTENT LAYER
-================================= */
-
 .auth-content {
   position: relative;
   z-index: 2;
@@ -33,10 +25,6 @@
   box-sizing: border-box;
 }
 
-
-/* =================================
-   MAIN
-================================= */
 
 .auth-main {
   flex: 1;
@@ -53,20 +41,12 @@
 }
 
 
-/* =================================
-   AUTH CARD POSITION
-================================= */
-
 .auth-main > section {
   flex-shrink: 0;
 
   margin-right: 2%;
 }
 
-
-/* =================================
-   NAVBAR
-================================= */
 
 .auth-content .navbar {
   position: relative;
@@ -75,10 +55,6 @@
 }
 
 
-/* =================================
-   FOOTER
-================================= */
-
 .auth-content .footer {
   position: relative;
 
@@ -86,13 +62,10 @@
 }
 
 
-/* =================================
-   PAGE TRANSITION
-================================= */
-
 .auth-main > section {
-  animation: auth-card-enter 0.35s ease both;
+  animation: auth-card-enter 1s ease both;
 }
+
 
 @keyframes auth-card-enter {
   from {
@@ -109,48 +82,3 @@
 }
 
 
-/* =================================
-   TABLET
-================================= */
-
-@media (max-width: 1000px) {
-
-  .auth-main {
-    justify-content: center;
-
-    padding: 80px 30px 60px;
-  }
-
-  .auth-main > section {
-    margin-right: 0;
-  }
-
-}
-
-
-/* =================================
-   MOBILE
-================================= */
-
-@media (max-width: 700px) {
-
-  .auth-main {
-    align-items: center;
-
-    padding: 70px 18px 45px;
-  }
-
-}
-
-
-/* =================================
-   SMALL MOBILE
-================================= */
-
-@media (max-width: 450px) {
-
-  .auth-main {
-    padding: 60px 12px 35px;
-  }
-
-}

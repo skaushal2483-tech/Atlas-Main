@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+import ThemeToggle from "./ThemeToggle";
 
 import "../../styles/shared/Navbar.css";
 
@@ -11,14 +13,17 @@ function Navbar({
   scrollToMemberships,
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isLandingPage = location.pathname === "/";
 
   function handleMenuClick() {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
   }
 
   function handleSectionClick(scrollFunction) {
     setIsMenuOpen(false);
-    scrollFunction();
+    scrollFunction?.();
   }
 
   useEffect(() => {
@@ -48,63 +53,76 @@ function Navbar({
   return (
     <>
       <nav className="navbar">
-        <div className="navbar-logo">
-          <img src="/images/atlasLogo_Crimson.png" alt="ATLAS" />
-        </div>
+        <Link
+          to="/"
+          className="navbar-logo"
+          aria-label="ATLAS home"
+        >
+          <img
+            src="/images/atlasLogo_Crimson.png"
+            alt="ATLAS"
+          />
+        </Link>
 
         <div className="navbar-actions">
-          <button
-            className={`theme-button ${isDark ? "nyx" : "eos"}`}
-            onClick={() => setIsDark(!isDark)}
-            aria-label="Switch theme"
-          ></button>
+          <ThemeToggle
+            isDark={isDark}
+            setIsDark={setIsDark}
+          />
 
-          <button
-            className="navbar-button menu-button"
-            onClick={handleMenuClick}
-            aria-label="Open navigation menu"
-          >
-            ☰
-          </button>
+          {isLandingPage && (
+            <button
+              type="button"
+              className="navbar-button menu-button"
+              onClick={handleMenuClick}
+              aria-label="Toggle navigation menu"
+              aria-expanded={isMenuOpen}
+            >
+              ☰
+            </button>
+          )}
         </div>
       </nav>
 
-      <div className={`menu ${isMenuOpen ? "menu-open" : ""}`}>
+      {isLandingPage && (
+        <div className={`menu ${isMenuOpen ? "menu-open" : ""}`}>
+          <button
+            type="button"
+            onClick={() => handleSectionClick(scrollToWhy)}
+            disabled={!scrollToWhy}
+          >
+            Features
+          </button>
 
-        <button
-          type="button"
-          onClick={() => handleSectionClick(scrollToWhy)}
-        >
-          Features
-        </button>
+          <button
+            type="button"
+            onClick={() => handleSectionClick(scrollToPrograms)}
+            disabled={!scrollToPrograms}
+          >
+            Programs
+          </button>
 
-        <button
-          type="button"
-          onClick={() => handleSectionClick(scrollToPrograms)}
-        >
-          Programs
-        </button>
+          <button
+            type="button"
+            onClick={() =>
+              handleSectionClick(scrollToMemberships)
+            }
+            disabled={!scrollToMemberships}
+          >
+            Membership
+          </button>
 
-        <button
-          type="button"
-          onClick={() =>
-            handleSectionClick(scrollToMemberships)
-          }
-        >
-          Membership
-        </button>
+          <div className="menu-divider"></div>
 
-        <div className="menu-divider"></div>
-
-        <Link
-          to="/auth"
-          className="menu-cta"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          Start Your Journey
-        </Link>
-
-      </div>
+          <Link
+            to="/auth"
+            className="menu-cta"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Start Your Journey
+          </Link>
+        </div>
+      )}
     </>
   );
 }

@@ -1,0 +1,108 @@
+.daily-meal-log-page {
+display: flex;
+min-height: 100vh;
+background: var(--bg);
+color: var(--text);
+}
+
+.daily-meal-log-main {
+flex: 1;
+min-width: 0;
+height: 100vh;
+overflow-y: auto;
+}
+
+.daily-meal-log-container {
+width: 100%;
+max-width: 1500px;
+margin: 0 auto;
+padding: 36px;
+}
+
+.daily-meal-log-footer {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+margin-top: 38px;
+padding: 24px 0 8px;
+border-top: 1px solid var(--border);
+}
+
+.daily-meal-log-footer p {
+margin: 0;
+color: var(--text2);
+font-size: 13px;
+line-height: 1.6;
+}
+
+.daily-meal-log-end-button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+min-height: 48px;
+padding: 0 22px;
+border: 1px solid var(--primary);
+border-radius: 11px;
+background: var(--primary);
+color: #ffffff;
+font-family: inherit;
+font-size: 13px;
+font-weight: 800;
+white-space: nowrap;
+cursor: pointer;
+transition:
+background 0.2s ease,
+transform 0.2s ease;
+}
+
+.daily-meal-log-end-button:hover {
+background: var(--hover);
+transform: translateY(-1px);
+}
+
+.daily-meal-log-end-button span {
+font-size: 18px;
+transition: transform 0.2s ease;
+}
+
+.daily-meal-log-end-button:hover span {
+transform: translateX(3px);
+}
+
+.daily-meal-log-end-button:focus-visible {
+outline: 2px solid var(--primary);
+outline-offset: 3px;
+}
+
+.daily-meal-log-error {
+margin: 20px 0 0;
+padding: 14px 16px;
+border: 1px solid var(--primary);
+border-radius: 10px;
+color: var(--text);
+font-size: 13px;
+line-height: 1.6;
+}
+
+@media (max-width: 1000px) {
+.daily-meal-log-container {
+padding: 28px;
+}
+}
+
+@media (max-width: 600px) {
+.daily-meal-log-container {
+padding: 22px 16px;
+}
+
+.daily-meal-log-footer {
+align-items: stretch;
+flex-direction: column;
+}
+
+.daily-meal-log-end-button {
+width: 100%;
+}
+}

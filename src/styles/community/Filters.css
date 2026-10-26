@@ -14,6 +14,7 @@
   box-sizing: border-box;
 }
 
+
 .community-filters-title {
   margin: 0;
 
@@ -24,11 +25,13 @@
   line-height: 1.2;
 }
 
+
 .community-filter-dropdown {
   position: relative;
 
   width: 220px;
 }
+
 
 .community-filter-trigger {
   width: 100%;
@@ -59,9 +62,11 @@
     background 0.18s ease;
 }
 
+
 .community-filter-trigger:hover {
   border-color: var(--primary);
 }
+
 
 .community-filter-value {
   min-width: 0;
@@ -73,6 +78,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
 
 .community-filter-arrow {
   flex-shrink: 0;
@@ -104,6 +110,7 @@
   z-index: 20;
 }
 
+
 .community-filter-option {
   width: 100%;
 
@@ -133,24 +140,4 @@
 
 .community-filter-option:hover {
   color: var(--primary);
-}
-
-
-@media (max-width: 600px) {
-  .community-filters {
-    margin: 22px 0;
-    padding: 15px 0;
-  }
-
-  .community-filters-title {
-    font-size: 15px;
-  }
-
-  .community-filter-dropdown {
-    width: 190px;
-  }
-
-  .community-filter-trigger {
-    padding: 12px 15px;
-  }
 }

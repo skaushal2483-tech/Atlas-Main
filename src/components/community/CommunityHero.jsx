@@ -4,16 +4,12 @@ function CommunityHero() {
   return (
     <section className="community-hero">
 
-      {/* Background */}
       <div className="community-hero-image"></div>
 
-      {/* Dark gradient */}
       <div className="community-hero-overlay"></div>
 
-      {/* Main content */}
       <div className="community-hero-content">
 
-        {/* Heading */}
         <div className="community-hero-heading">
 
           <span className="community-hero-eyebrow">
@@ -28,10 +24,8 @@ function CommunityHero() {
         </div>
 
 
-        {/* Stats */}
         <div className="community-hero-stats">
 
-          {/* Members */}
           <div className="community-stat-card">
             <div className="community-stat-info">
               <strong>12.4K</strong>
@@ -40,7 +34,6 @@ function CommunityHero() {
           </div>
 
 
-          {/* Posts */}
           <div className="community-stat-card">
             <div className="community-stat-info">
               <strong>48K</strong>

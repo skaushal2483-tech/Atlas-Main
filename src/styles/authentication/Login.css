@@ -1,7 +1,3 @@
-/* =================================
-   LOGIN CARD
-================================= */
-
 .login-card {
   width: min(100%, 430px);
 
@@ -16,10 +12,6 @@
 }
 
 
-/* =================================
-   TITLE
-================================= */
-
 .login-title {
   margin: 0 0 34px;
 
@@ -33,14 +25,11 @@
   letter-spacing: 0.5px;
 }
 
+
 .login-title span {
   color: var(--primary);
 }
 
-
-/* =================================
-   FORM
-================================= */
 
 .login-form {
   display: flex;
@@ -50,18 +39,10 @@
 }
 
 
-/* =================================
-   FIELD
-================================= */
-
 .login-field {
   width: 100%;
 }
 
-
-/* =================================
-   INPUT
-================================= */
 
 .login-field input {
   width: 100%;
@@ -88,9 +69,11 @@
     background-color 0.2s ease;
 }
 
+
 .login-field input::placeholder {
   color: var(--text2);
 }
+
 
 .login-field input:hover {
   border-color: color-mix(
@@ -100,16 +83,13 @@
   );
 }
 
+
 .login-field input:focus {
   border-color: var(--primary);
 
   background: var(--card);
 }
 
-
-/* =================================
-   LOGIN BUTTON
-================================= */
 
 .login-submit {
   width: 100%;
@@ -134,20 +114,18 @@
     background-color 0.18s ease;
 }
 
+
 .login-submit:hover {
   transform: translateY(-1px);
 
   background: var(--hover);
 }
 
+
 .login-submit:active {
   transform: translateY(0);
 }
 
-
-/* =================================
-   SWITCH
-================================= */
 
 .login-switch {
   display: flex;
@@ -164,6 +142,7 @@
   font-weight: 500;
 }
 
+
 .login-switch button {
   padding: 0;
 
@@ -179,13 +158,11 @@
   cursor: pointer;
 }
 
+
 .login-switch button:hover {
   color: var(--hover);
 }
 
-/* =================================
-   VALIDATION ERRORS
-================================= */
 
 .login-error {
   margin: 6px 0 0;
@@ -198,11 +175,13 @@
   line-height: 1.3;
 }
 
+
 .login-submit-error {
   margin: 0;
 
   text-align: center;
 }
+
 
 .login-submit {
   display: flex;
@@ -211,21 +190,4 @@
 
   text-decoration: none;
   box-sizing: border-box;
-}
-
-
-/* =================================
-   MOBILE
-================================= */
-
-@media (max-width: 600px) {
-  .login-card {
-    padding: 40px 25px 36px;
-
-    border-radius: 15px;
-  }
-
-  .login-title {
-    margin-bottom: 30px;
-  }
 }

@@ -20,6 +20,7 @@
     border-color 0.5s ease;
 }
 
+
 .dark .theme-button {
   background: linear-gradient(
     to right,
@@ -28,13 +29,16 @@
   );
 }
 
+
 .theme-button.nyx {
   transform: rotate(180deg);
 }
 
+
 .theme-button:hover {
   transform: scale(1.08);
 }
+
 
 .theme-button.nyx:hover {
   transform: rotate(180deg) scale(1.08);

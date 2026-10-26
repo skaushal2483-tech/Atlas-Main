@@ -1,4 +1,4 @@
-import SideBar from "../components/community/SideBar";
+import Sidebar from "../components/shared/Sidebar";
 import CommunityHero from "../components/community/CommunityHero";
 import CreatePost from "../components/community/CreatePost";
 import Leaderboard from "../components/community/Leaderboard";
@@ -8,11 +8,14 @@ import Posts from "../components/community/Posts";
 
 import "../styles/community/Community.css";
 
-function Community() {
+function Community({ isDark, setIsDark }) {
   return (
     <div className="community-layout">
 
-      <SideBar />
+      <Sidebar
+        isDark={isDark}
+        setIsDark={setIsDark}
+      />
 
       <main className="community-main">
 
@@ -29,7 +32,6 @@ function Community() {
             <Posts />
 
           </section>
-
 
           <aside className="community-sidebar">
 

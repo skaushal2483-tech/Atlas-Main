@@ -9,6 +9,7 @@
   border-bottom: 1px solid var(--border);
 }
 
+
 .programs-header {
   max-width: 1200px;
 
@@ -16,6 +17,7 @@
 
   text-align: center;
 }
+
 
 .programs-header h2 {
   margin: 0;
@@ -29,6 +31,7 @@
   letter-spacing: -3px;
 }
 
+
 .programs-grid {
   max-width: 1200px;
 
@@ -39,6 +42,7 @@
 
   gap: 20px;
 }
+
 
 .program-card {
   position: relative;
@@ -63,11 +67,13 @@
     border-color 0.4s ease;
 }
 
+
 .program-card:hover {
   transform: translateY(-5px);
 
   border-color: var(--primary);
 }
+
 
 .program-overlay {
   position: absolute;
@@ -80,6 +86,7 @@
   );
 }
 
+
 .program-content {
   position: relative;
 
@@ -87,6 +94,7 @@
 
   padding: 32px;
 }
+
 
 .program-content h3 {
   margin: 0 0 8px;
@@ -99,46 +107,29 @@
   letter-spacing: -1px;
 }
 
+
 .program-content span {
   color: rgba(255, 255, 255, 0.75);
 
   font-size: 14px;
 }
 
+
 .bodybuilding {
   background-image: url("/images/BB.jpg");
 }
+
 
 .powerlifting {
   background-image: url("/images/pow.png");
 }
 
+
 .strongman {
   background-image: url("/images/Strongmen.png");
 }
 
+
 .hyrox {
   background-image: url("/images/hyrox.png");
-}
-
-@media (max-width: 700px) {
-  .programs {
-    padding: 80px 24px;
-  }
-
-  .programs-header {
-    margin-bottom: 50px;
-  }
-
-  .programs-header h2 {
-    font-size: 44px;
-  }
-
-  .programs-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .program-card {
-    min-height: 300px;
-  }
 }

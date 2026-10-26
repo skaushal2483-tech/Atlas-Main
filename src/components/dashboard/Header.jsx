@@ -5,14 +5,12 @@ function Header() {
   return (
     <header className="dashboard-header">
 
-      {/* Welcome */}
       <div className="header-welcome">
         <p>WELCOME BACK</p>
         <h1>Let's get to work, Alex.</h1>
         <span>Ready to crush your goals today?</span>
       </div>
 
-      {/* Streak */}
       <div className="header-right">
         <div className="streak-card">
 
@@ -51,7 +49,6 @@ function Header() {
         </div>
       </div>
 
-      {/* Theme */}
     </header>
   );
 }

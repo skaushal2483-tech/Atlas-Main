@@ -10,7 +10,6 @@ function Metrics() {
 
       <div className="metrics-layout">
 
-        {/* BODYWEIGHT */}
         <div className="metric-weight-card">
 
           <span className="metric-label">BODYWEIGHT</span>
@@ -27,7 +26,6 @@ function Metrics() {
         </div>
 
 
-        {/* DAILY CALORIES */}
         <div className="metric-small-card">
 
           <span className="metric-label">DAILY CALORIES</span>
@@ -40,7 +38,6 @@ function Metrics() {
         </div>
 
 
-        {/* BODY FAT */}
         <div className="metric-small-card">
 
           <span className="metric-label">BODY FAT</span>

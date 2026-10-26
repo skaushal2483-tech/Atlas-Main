@@ -4,7 +4,6 @@ function AnalyticsGrid() {
   return (
     <section className="analytics-grid">
 
-      {/* WEEKLY ACTIVITY */}
       <article className="analytics-card">
         <div className="analytics-card-header">
           <span>WEEKLY ACTIVITY</span>
@@ -17,7 +16,6 @@ function AnalyticsGrid() {
       </article>
 
 
-      {/* WORKOUT DISTRIBUTION */}
       <article className="analytics-card">
         <div className="analytics-card-header">
           <span>WORKOUT DISTRIBUTION</span>
@@ -30,7 +28,6 @@ function AnalyticsGrid() {
       </article>
 
 
-      {/* TRAINING VOLUME */}
       <article className="analytics-card">
         <div className="analytics-card-header">
           <span>TRAINING VOLUME</span>
@@ -43,7 +40,6 @@ function AnalyticsGrid() {
       </article>
 
 
-      {/* GOAL PROGRESS */}
       <article className="analytics-card">
         <div className="analytics-card-header">
           <span>GOAL PROGRESS</span>
