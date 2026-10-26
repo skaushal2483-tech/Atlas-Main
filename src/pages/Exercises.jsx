@@ -4,6 +4,7 @@ import Sidebar from "../components/shared/Sidebar";
 import ExerciseHeader from "../components/exercises/ExerciseHeader";
 import ExerciseSearch from "../components/exercises/ExerciseSearch";
 import ExerciseFilters from "../components/exercises/ExerciseFilters";
+import ExerciseCard from "../components/exercises/ExerciseCard";
 
 import exercises from "../data/exercises";
 
@@ -30,16 +31,13 @@ function Exercises({ isDark, setIsDark }) {
         );
 
       const matchesCategory =
-        category === "All" || category === "All Categories" ||
-        exercise.category === category;
+        category === "All" || exercise.category === category;
 
       const matchesDifficulty =
-        difficulty === "All" || difficulty === "All Levels" ||
-        exercise.difficulty === difficulty;
+        difficulty === "All" || exercise.difficulty === difficulty;
 
       const matchesEquipment =
-        equipment === "All" || equipment === "All Equipment" ||
-        exercise.equipment === equipment;
+        equipment === "All" || exercise.equipment === equipment;
 
       return (
         matchesSearch &&
@@ -88,9 +86,8 @@ function Exercises({ isDark, setIsDark }) {
             />
           </section>
 
-          {/* Temporary table for testing search and filters */}
           <div className="exercises-results-heading">
-            <h2>Test Exercise Results</h2>
+            <h2>Explore Exercises</h2>
 
             <p>
               Showing <strong>{filteredExercises.length}</strong> of{" "}
@@ -99,45 +96,29 @@ function Exercises({ isDark, setIsDark }) {
           </div>
 
           {filteredExercises.length > 0 ? (
-            <div className="exercise-test-table-wrapper">
-              <table className="exercise-test-table">
-                <thead>
-                  <tr>
-                    <th>Exercise</th>
-                    <th>Category</th>
-                    <th>Primary Muscle</th>
-                    <th>Difficulty</th>
-                    <th>Equipment</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {filteredExercises.map((exercise) => (
-                    <tr key={exercise.id}>
-                      <td>{exercise.name}</td>
-                      <td>{exercise.category}</td>
-                      <td>{exercise.primaryMuscle}</td>
-                      <td>
-                        <span
-                          className={`exercise-test-difficulty ${
-                            exercise.difficulty?.toLowerCase() || "beginner"
-                          }`}
-                        >
-                          {exercise.difficulty}
-                        </span>
-                      </td>
-                      <td>{exercise.equipment}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="exercises-grid">
+              {filteredExercises.map((exercise) => (
+                <ExerciseCard
+                  key={exercise.id}
+                  exercise={exercise}
+                  onClick={() => {}}
+                />
+              ))}
             </div>
           ) : (
             <div className="exercises-empty">
+              <span
+                className="exercises-empty-icon"
+                aria-hidden="true"
+              >
+                &#9906;
+              </span>
+
               <h3>No exercises found</h3>
 
               <p>
-                Try another search term or adjust your filters.
+                Try another search term or adjust your filters to find an
+                exercise.
               </p>
 
               <button type="button" onClick={resetFilters}>

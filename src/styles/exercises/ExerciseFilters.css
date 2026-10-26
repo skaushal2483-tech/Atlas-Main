@@ -1,4 +1,3 @@
-
 .exercise-filters {
   display: flex;
   align-items: center;
@@ -37,6 +36,7 @@
   font-size: 11px;
   line-height: 1.5;
 }
+
 
 
 .exercise-filters-controls {
@@ -157,7 +157,6 @@
   box-sizing: border-box;
   z-index: 30;
 }
-
 
 .exercise-filter-menu::-webkit-scrollbar {
   width: 5px;
