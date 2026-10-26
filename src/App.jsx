@@ -10,6 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import Community from "./pages/Community";
 import Auth from "./pages/Authentication";
 import Exercises from "./pages/Exercises";
+import WorkoutLogger from "./pages/WorkoutLogger";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -21,7 +22,6 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-
         <Route
           path="/"
           element={
@@ -72,6 +72,15 @@ function App() {
           }
         />
 
+        <Route
+          path="/workouts"
+          element={
+            <WorkoutLogger
+              isDark={isDark}
+              setIsDark={setIsDark}
+            />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

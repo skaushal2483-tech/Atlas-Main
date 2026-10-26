@@ -1,4 +1,6 @@
-
+/* ========================================
+   EXERCISE FILTERS — MAIN SECTION
+======================================== */
 
 .exercise-filters {
   display: flex;
@@ -17,6 +19,9 @@
   box-sizing: border-box;
 }
 
+/* ========================================
+   SECTION HEADING
+======================================== */
 
 .exercise-filters-heading {
   display: flex;
@@ -38,7 +43,9 @@
   line-height: 1.5;
 }
 
-
+/* ========================================
+   FILTER CONTROLS
+======================================== */
 
 .exercise-filters-controls {
   display: flex;
@@ -49,7 +56,9 @@
   min-width: 0;
 }
 
-
+/* ========================================
+   INDIVIDUAL DROPDOWN
+======================================== */
 
 .exercise-filter-dropdown {
   position: relative;
@@ -68,7 +77,9 @@
   letter-spacing: 1.4px;
 }
 
-
+/* ========================================
+   DROPDOWN TRIGGER
+======================================== */
 
 .exercise-filter-trigger {
   width: 100%;
@@ -100,6 +111,7 @@
     background 0.18s ease;
 }
 
+/* Same subtle red border effect as Community */
 
 .exercise-filter-trigger:hover,
 .exercise-filter-trigger[aria-expanded="true"] {
@@ -121,7 +133,9 @@
   text-overflow: ellipsis;
 }
 
-
+/* ========================================
+   DROPDOWN ARROW
+======================================== */
 
 .exercise-filter-arrow {
   flex-shrink: 0;
@@ -137,7 +151,9 @@
   transform: rotate(180deg);
 }
 
-
+/* ========================================
+   DROPDOWN MENU
+======================================== */
 
 .exercise-filter-menu {
   position: absolute;
@@ -159,6 +175,7 @@
   z-index: 30;
 }
 
+/* Dropdown scrollbar */
 
 .exercise-filter-menu::-webkit-scrollbar {
   width: 5px;
@@ -173,7 +190,9 @@
   background: var(--border);
 }
 
-
+/* ========================================
+   DROPDOWN OPTIONS
+======================================== */
 
 .exercise-filter-option {
   width: 100%;
@@ -203,11 +222,14 @@
     background 0.12s ease;
 }
 
+/* Same text-only red hover as Community */
 
 .exercise-filter-option:hover {
   color: var(--primary);
   background: transparent;
 }
+
+/* Selected option */
 
 .exercise-filter-option.active {
   color: var(--primary);
@@ -226,7 +248,9 @@
   font-size: 12px;
 }
 
-
+/* ========================================
+   RESET FILTERS BUTTON
+======================================== */
 
 .exercise-filters-reset {
   display: inline-flex;
@@ -269,4 +293,86 @@
 
 .exercise-filters-reset span {
   font-size: 16px;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+  .exercise-filters {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .exercise-filters-controls {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .exercise-filter-dropdown {
+    flex: 1 1 150px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .exercise-filters {
+    padding: 20px 0;
+    gap: 18px;
+  }
+
+  .exercise-filters-heading {
+    gap: 5px;
+  }
+
+  .exercise-filters-controls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: end;
+    gap: 12px;
+  }
+
+  .exercise-filter-dropdown {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .exercise-filter-trigger {
+    min-height: 44px;
+    padding: 11px 10px;
+    font-size: 11px;
+  }
+
+  .exercise-filter-label {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .exercise-filter-menu {
+    max-height: 240px;
+  }
+
+  .exercise-filters-reset {
+    justify-content: flex-start;
+    min-height: 44px;
+    padding: 0 8px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .exercise-filter-trigger,
+  .exercise-filter-arrow,
+  .exercise-filter-option,
+  .exercise-filters-reset {
+    transition: none;
+  }
 }

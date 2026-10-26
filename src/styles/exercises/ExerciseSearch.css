@@ -79,3 +79,27 @@
   background: var(--surface);
   color: var(--text);
 }
+
+@media (max-width: 600px) {
+  .exercise-search {
+    min-height: 54px;
+    padding: 0 16px;
+    border-radius: 9px;
+  }
+
+  .exercise-search-icon {
+    margin-right: 12px;
+    font-size: 19px;
+  }
+
+  .exercise-search input {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exercise-search,
+  .exercise-search-clear {
+    transition: none;
+  }
+}

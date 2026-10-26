@@ -8,6 +8,7 @@
   text-align: center;
 }
 
+/* Eyebrow */
 
 .exercise-header-eyebrow {
   display: flex;
@@ -29,6 +30,7 @@
   opacity: 0.8;
 }
 
+/* Main title */
 
 .exercise-header-title {
   display: flex;
@@ -49,6 +51,7 @@
 }
 
 
+/* Description */
 
 .exercise-header-description {
   max-width: 490px;
@@ -60,6 +63,7 @@
   line-height: 2;
 }
 
+/* Decorative divider */
 
 .exercise-header-divider {
   display: flex;
@@ -80,4 +84,77 @@
   height: 6px;
   border: 1px solid var(--primary);
   transform: rotate(45deg);
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+  .exercise-header {
+    margin-bottom: 34px;
+    padding: 24px 12px 30px;
+  }
+
+  .exercise-header-title {
+    font-size: clamp(40px, 7vw, 54px);
+    letter-spacing: -2.7px;
+  }
+
+  .exercise-header-title-second {
+    margin-left: 10px;
+  }
+
+  .exercise-header-description {
+    margin-top: 19px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .exercise-header {
+    margin-bottom: 28px;
+    padding: 18px 2px 25px;
+  }
+
+  .exercise-header-eyebrow {
+    gap: 9px;
+    margin-bottom: 21px;
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .exercise-header-eyebrow-line {
+    width: 16px;
+  }
+
+  .exercise-header-title {
+    font-size: clamp(34px, 9vw, 43px);
+    letter-spacing: -2px;
+  }
+
+  .exercise-header-title-second {
+    margin-left: 8px;
+  }
+
+  .exercise-header-description {
+    margin-top: 16px;
+    font-size: 12px;
+    line-height: 1.9;
+  }
+
+  .exercise-header-desktop-break {
+    display: none;
+  }
+
+  .exercise-header-divider {
+    margin-top: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exercise-header,
+  .exercise-header * {
+    animation: none;
+    transition: none;
+  }
 }

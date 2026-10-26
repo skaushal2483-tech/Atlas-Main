@@ -26,6 +26,7 @@
     outline-offset: 3px;
 }
 
+/* Image */
 
 .exercise-card-image {
     position: relative;
@@ -46,6 +47,7 @@
     transform: scale(1.025);
 }
 
+/* Category */
 
 .exercise-card-category {
     position: absolute;
@@ -60,6 +62,7 @@
     letter-spacing: 0.3px;
 }
 
+/* Content */
 
 .exercise-card-content {
     display: flex;
@@ -69,6 +72,7 @@
     padding: 18px 18px 20px;
 }
 
+/* Exercise name */
 
 .exercise-card-title {
     margin: 0;
@@ -85,6 +89,7 @@
     color: var(--primary);
 }
 
+/* Difficulty */
 
 .exercise-card-difficulty {
     display: inline-flex;
@@ -102,6 +107,7 @@
     border-radius: 50%;
 }
 
+/* Subtle difficulty colors */
 
 .exercise-card-difficulty.beginner .exercise-card-difficulty-dot {
     background: #299764;
@@ -113,4 +119,38 @@
 
 .exercise-card-difficulty.advanced .exercise-card-difficulty-dot {
     background: #d94a54;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .exercise-card-image {
+        height: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .exercise-card-image {
+        height: 210px;
+    }
+
+    .exercise-card-content {
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .exercise-card-title {
+        font-size: 15px;
+    }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .exercise-card,
+    .exercise-card-image img,
+    .exercise-card-title {
+        transition: none;
+    }
 }

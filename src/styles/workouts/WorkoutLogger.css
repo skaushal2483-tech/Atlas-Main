@@ -1,0 +1,133 @@
+
+
+.workout-logger-page {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+.workout-logger-main {
+  flex: 1;
+  min-width: 0;
+  height: 100vh;
+
+  overflow-y: auto;
+  padding: 36px 40px;
+
+  box-sizing: border-box;
+
+  background: var(--bg);
+  color: var(--text);
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.workout-logger-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+
+
+.workout-logger-header {
+  width: 100%;
+  box-sizing: border-box;
+
+  margin: 0 0 40px;
+  padding: 30px 20px 34px;
+
+  border-bottom: 1px solid var(--border);
+
+  color: var(--text);
+  text-align: center;
+}
+
+.workout-logger-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  margin-bottom: 25px;
+
+  color: var(--primary);
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 1.6;
+}
+
+.workout-logger-eyebrow-line {
+  width: 25px;
+  height: 1px;
+  flex-shrink: 0;
+
+  background: var(--primary);
+  opacity: 0.8;
+}
+
+.workout-logger-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: clamp(46px, 5.4vw, 66px);
+  font-weight: 750;
+  letter-spacing: -3.8px;
+  line-height: 1.08;
+}
+
+.workout-logger-title-accent {
+  margin-left: 14px;
+  color: var(--primary);
+}
+
+.workout-logger-subtitle {
+  max-width: 490px;
+  margin: 23px auto 0;
+
+  color: var(--text2);
+
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  line-height: 2;
+}
+
+.workout-logger-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: 29px;
+}
+
+.workout-logger-divider-line {
+  width: 28px;
+  height: 1px;
+  background: var(--border);
+}
+
+.workout-logger-divider-mark {
+  width: 6px;
+  height: 6px;
+
+  border: 1px solid var(--primary);
+  transform: rotate(45deg);
+}
