@@ -1,8 +1,31 @@
+import { useEffect, useState } from "react";
+
 import Sidebar from "../components/shared/Sidebar";
+import WorkoutStats from "../components/workouts/WorkoutStats";
 
 import "../styles/workouts/WorkoutLogger.css";
 
+const STORAGE_KEY = "atlas_workout_logs";
+
 function WorkoutLogger({ isDark, setIsDark }) {
+  const [workouts, setWorkouts] = useState([]);
+
+  useEffect(() => {
+    try {
+      const storedWorkouts = localStorage.getItem(STORAGE_KEY);
+
+      if (storedWorkouts) {
+        const parsedWorkouts = JSON.parse(storedWorkouts);
+
+        if (Array.isArray(parsedWorkouts)) {
+          setWorkouts(parsedWorkouts);
+        }
+      }
+    } catch (error) {
+      console.error("Failed to load workouts:", error);
+    }
+  }, []);
+
   return (
     <div className="workout-logger-page">
       <Sidebar isDark={isDark} setIsDark={setIsDark} />
@@ -33,6 +56,10 @@ function WorkoutLogger({ isDark, setIsDark }) {
               <span className="workout-logger-divider-line" />
             </div>
           </header>
+
+          <section className="workout-logger-overview">
+            <WorkoutStats workouts={workouts} />
+          </section>
         </div>
       </main>
     </div>

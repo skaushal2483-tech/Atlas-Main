@@ -1,5 +1,4 @@
 
-
 .workout-logger-page {
   display: flex;
   width: 100%;
@@ -130,4 +129,10 @@
 
   border: 1px solid var(--primary);
   transform: rotate(45deg);
+}
+
+
+
+.workout-logger-overview {
+  margin-bottom: 48px;
 }
