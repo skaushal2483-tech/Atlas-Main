@@ -77,19 +77,3 @@ color-scheme: dark;
 border-color: var(--primary);
 }
 
-@media (max-width: 600px) {
-.daily-log-header {
-align-items: stretch;
-flex-direction: column;
-gap: 22px;
-}
-
-.daily-log-heading h1 {
-font-size: 36px;
-}
-
-.daily-log-date {
-width: 100%;
-min-width: 0;
-}
-}

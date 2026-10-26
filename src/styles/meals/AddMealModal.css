@@ -226,21 +226,4 @@ transform: translateY(0) scale(1);
 }
 }
 
-@media (max-width: 420px) {
-.add-meal-modal {
-padding: 22px;
-}
 
-.add-meal-fields {
-grid-template-columns: 1fr;
-gap: 14px;
-}
-
-.add-meal-actions {
-flex-direction: column-reverse;
-}
-
-.add-meal-actions button {
-width: 100%;
-}
-}

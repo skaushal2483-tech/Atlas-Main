@@ -55,8 +55,8 @@ function saveDailyLog(date, targets, meals) {
   const updatedLogs =
     existingIndex !== -1
       ? logs.map((log, index) =>
-          index === existingIndex ? savedLog : log
-        )
+        index === existingIndex ? savedLog : log
+      )
       : [...logs, savedLog];
 
   updatedLogs.sort((a, b) => b.date.localeCompare(a.date));
@@ -173,9 +173,9 @@ function DailyMealLog({ isDark, setIsDark }) {
       updatedMeals = meals.map((meal, index) =>
         index === existingMealIndex
           ? {
-              ...meal,
-              foods: [...(meal.foods || []), food],
-            }
+            ...meal,
+            foods: [...(meal.foods || []), food],
+          }
           : meal
       );
     } else {

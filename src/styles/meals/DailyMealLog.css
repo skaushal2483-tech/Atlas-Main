@@ -86,23 +86,3 @@ font-size: 13px;
 line-height: 1.6;
 }
 
-@media (max-width: 1000px) {
-.daily-meal-log-container {
-padding: 28px;
-}
-}
-
-@media (max-width: 600px) {
-.daily-meal-log-container {
-padding: 22px 16px;
-}
-
-.daily-meal-log-footer {
-align-items: stretch;
-flex-direction: column;
-}
-
-.daily-meal-log-end-button {
-width: 100%;
-}
-}

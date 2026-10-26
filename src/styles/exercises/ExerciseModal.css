@@ -1,0 +1,596 @@
+/* ========================================
+MODAL OVERLAY
+======================================== */
+
+.exercise-modal-overlay {
+position: fixed;
+inset: 0;
+z-index: 1000;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+padding: 24px;
+background: rgba(0, 0, 0, 0.76);
+}
+
+/* ========================================
+MODAL CONTAINER
+======================================== */
+
+.exercise-modal {
+width: 100%;
+max-width: 800px;
+max-height: calc(100vh - 48px);
+
+overflow-y: auto;
+
+border: 1px solid var(--border);
+border-radius: 12px;
+
+background: var(--card);
+color: var(--text);
+
+scrollbar-width: thin;
+scrollbar-color: var(--border) transparent;
+
+animation: exercise-modal-enter 0.22s ease-out;
+}
+
+.exercise-modal::-webkit-scrollbar {
+width: 5px;
+}
+
+.exercise-modal::-webkit-scrollbar-track {
+background: transparent;
+}
+
+.exercise-modal::-webkit-scrollbar-thumb {
+border-radius: 8px;
+background: var(--border);
+}
+
+/* ========================================
+HERO IMAGE
+======================================== */
+
+.exercise-modal-image {
+position: relative;
+
+width: 100%;
+height: 350px;
+
+overflow: hidden;
+background: var(--surface);
+}
+
+.exercise-modal-image img {
+display: block;
+
+width: 100%;
+height: 100%;
+
+object-fit: cover;
+object-position: center;
+}
+
+.exercise-modal-category {
+position: absolute;
+left: 24px;
+bottom: 22px;
+
+padding: 8px 12px;
+
+border: 1px solid var(--border);
+border-radius: 5px;
+
+background: var(--card);
+color: var(--text);
+
+font-size: 11px;
+font-weight: 650;
+letter-spacing: 0.5px;
+}
+
+/* ========================================
+MAIN CONTENT
+======================================== */
+
+.exercise-modal-content {
+padding: 38px 42px 42px;
+}
+
+/* ========================================
+EXERCISE INTRODUCTION
+======================================== */
+
+.exercise-modal-heading {
+display: flex;
+flex-direction: column;
+align-items: center;
+
+padding-bottom: 34px;
+
+text-align: center;
+}
+
+.exercise-modal-eyebrow {
+margin-bottom: 14px;
+
+color: var(--primary);
+
+font-size: 10px;
+font-weight: 750;
+letter-spacing: 2px;
+}
+
+.exercise-modal-heading h2 {
+margin: 0;
+
+color: var(--text);
+
+font-size: clamp(32px, 4.5vw, 42px);
+font-weight: 750;
+letter-spacing: -1.2px;
+line-height: 1.2;
+}
+
+.exercise-modal-description {
+max-width: 590px;
+
+margin: 17px auto 0;
+
+color: var(--text2);
+
+font-size: 14px;
+line-height: 1.9;
+}
+
+/* ========================================
+DIFFICULTY
+======================================== */
+
+.exercise-modal-difficulty {
+display: inline-flex;
+align-items: center;
+gap: 9px;
+
+margin-top: 19px;
+padding: 8px 13px;
+
+border: 1px solid var(--border);
+border-radius: 30px;
+
+color: var(--text2);
+
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 0.9px;
+text-transform: uppercase;
+}
+
+.exercise-modal-difficulty-dot {
+width: 8px;
+height: 8px;
+flex-shrink: 0;
+
+border-radius: 50%;
+background: var(--text2);
+}
+
+.exercise-modal-difficulty.beginner {
+color: #36b37e;
+}
+
+.exercise-modal-difficulty.beginner .exercise-modal-difficulty-dot {
+background: #36b37e;
+}
+
+.exercise-modal-difficulty.intermediate {
+color: #e4ad45;
+}
+
+.exercise-modal-difficulty.intermediate .exercise-modal-difficulty-dot {
+background: #e4ad45;
+}
+
+.exercise-modal-difficulty.advanced {
+color: #f06470;
+}
+
+.exercise-modal-difficulty.advanced .exercise-modal-difficulty-dot {
+background: #f06470;
+}
+
+/* ========================================
+EXERCISE DETAILS
+======================================== */
+
+.exercise-modal-meta {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 20px;
+
+padding: 27px 0;
+
+border-top: 1px solid var(--border);
+border-bottom: 1px solid var(--border);
+}
+
+.exercise-modal-meta-item {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 11px;
+
+min-width: 0;
+
+text-align: center;
+}
+
+.exercise-modal-meta-item + .exercise-modal-meta-item {
+border-left: 1px solid var(--border);
+}
+
+.exercise-modal-meta-label {
+color: var(--primary);
+
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 1.15px;
+}
+
+.exercise-modal-meta-item strong {
+color: var(--text);
+
+font-size: 14px;
+font-weight: 650;
+line-height: 1.6;
+
+overflow-wrap: anywhere;
+}
+
+/* ========================================
+SHARED SECTION LABEL
+======================================== */
+
+.exercise-modal-section-kicker {
+display: block;
+
+color: var(--primary);
+
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 1.6px;
+line-height: 1.6;
+}
+
+/* ========================================
+RECOMMENDED SETS AND REPS
+======================================== */
+
+.exercise-modal-training-section {
+padding: 34px 0;
+
+border-bottom: 1px solid var(--border);
+}
+
+.exercise-modal-training {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 24px;
+}
+
+.exercise-modal-training-item {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 13px;
+
+min-width: 0;
+
+text-align: center;
+}
+
+.exercise-modal-training-item + .exercise-modal-training-item {
+border-left: 1px solid var(--border);
+}
+
+.exercise-modal-training-item .exercise-modal-section-kicker {
+color: var(--primary);
+
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 1.1px;
+}
+
+.exercise-modal-training-item strong {
+color: var(--text);
+
+font-size: clamp(30px, 4vw, 38px);
+font-weight: 750;
+letter-spacing: -1px;
+line-height: 1.25;
+
+overflow-wrap: anywhere;
+}
+
+/* ========================================
+MUSCLES WORKED
+======================================== */
+
+.exercise-modal-muscles-section {
+padding: 32px 0 35px;
+
+border-bottom: 1px solid var(--border);
+
+text-align: center;
+}
+
+.exercise-modal-muscles-section h3 {
+margin: 0 0 20px;
+
+color: var(--text);
+
+font-size: 19px;
+font-weight: 750;
+letter-spacing: -0.3px;
+}
+
+.exercise-modal-muscles {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+gap: 10px;
+}
+
+.exercise-modal-muscles > span {
+padding: 8px 13px;
+
+border: 1px solid var(--border);
+border-radius: 6px;
+
+background: var(--surface);
+color: var(--text2);
+
+font-size: 12px;
+font-weight: 550;
+line-height: 1.5;
+
+transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.exercise-modal-muscles > .exercise-modal-muscle-primary {
+border-color: var(--primary);
+
+background: transparent;
+color: var(--primary);
+}
+
+/* ========================================
+HOW TO PERFORM
+======================================== */
+
+/* ========================================
+HOW TO PERFORM — SEPARATE CARD
+======================================== */
+
+.exercise-modal-instructions-section {
+margin-top: 30px;
+padding: 28px 27px;
+
+border: 1px solid var(--border);
+border-radius: 10px;
+
+background: var(--surface);
+}
+
+/* Slightly darker surface in dark mode */
+.dark .exercise-modal-instructions-section {
+background: #111111;
+border-color: #292929;
+}
+
+/* Centered section heading */
+.exercise-modal-section-heading {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+
+margin-bottom: 25px;
+
+text-align: center;
+}
+
+.exercise-modal-section-heading h3 {
+margin: 0;
+
+color: var(--text);
+
+font-size: 22px;
+font-weight: 750;
+letter-spacing: -0.5px;
+}
+
+.exercise-modal-section-accent {
+display: none;
+}
+
+/* Instructions remain left-aligned */
+.exercise-modal-instructions {
+display: flex;
+flex-direction: column;
+
+margin: 0;
+padding: 0;
+
+list-style: none;
+}
+
+.exercise-modal-instructions li {
+display: grid;
+grid-template-columns: 36px minmax(0, 1fr);
+align-items: start;
+gap: 16px;
+
+padding: 17px 0;
+
+border-bottom: 1px solid var(--border);
+}
+
+.exercise-modal-instructions li:first-child {
+padding-top: 4px;
+}
+
+.exercise-modal-instructions li:last-child {
+padding-bottom: 4px;
+border-bottom: none;
+}
+
+.exercise-modal-step-number {
+margin: 0;
+padding: 0;
+
+color: var(--primary);
+
+font-size: 13px;
+font-weight: 750;
+line-height: 1.9;
+}
+
+.exercise-modal-instructions p {
+margin: 0;
+padding: 0;
+
+color: var(--text);
+
+font-size: 14px;
+line-height: 1.9;
+
+text-align: left;
+}
+
+/* Mobile spacing */
+@media (max-width: 600px) {
+.exercise-modal-instructions-section {
+margin-top: 23px;
+padding: 23px 17px;
+}
+
+.exercise-modal-section-heading {
+margin-bottom: 20px;
+}
+
+.exercise-modal-section-heading h3 {
+font-size: 20px;
+}
+
+.exercise-modal-instructions li {
+grid-template-columns: 30px minmax(0, 1fr);
+gap: 11px;
+padding: 15px 0;
+}
+
+.exercise-modal-step-number {
+font-size: 12px;
+}
+
+.exercise-modal-instructions p {
+font-size: 13px;
+}
+}
+
+
+/* ========================================
+COMMON MISTAKES
+======================================== */
+
+.exercise-modal-mistakes {
+margin-top: 30px;
+padding: 29px 27px;
+
+border: 1px solid var(--border);
+border-radius: 10px;
+
+background: var(--surface);
+}
+
+/* Dark theme: a slightly darker, separate surface */
+.dark .exercise-modal-mistakes {
+background: #111111;
+border-color: #292929;
+}
+
+.exercise-modal-mistakes-heading {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+
+margin-bottom: 25px;
+
+text-align: center;
+}
+
+.exercise-modal-mistakes-mark {
+display: none;
+}
+
+.exercise-modal-mistakes .exercise-modal-section-kicker {
+color: var(--primary);
+}
+
+.exercise-modal-mistakes h3 {
+margin: 0;
+
+color: var(--text);
+
+font-size: 22px;
+font-weight: 750;
+letter-spacing: -0.5px;
+}
+
+.exercise-modal-mistakes ul {
+display: flex;
+flex-direction: column;
+gap: 14px;
+
+margin: 0;
+padding-left: 22px;
+
+color: var(--text2);
+
+font-size: 14px;
+line-height: 1.9;
+
+text-align: left;
+}
+
+.exercise-modal-mistakes li {
+padding-left: 3px;
+}
+
+.exercise-modal-mistakes li::marker {
+color: var(--primary);
+}
+
+/* ========================================
+MODAL ANIMATION
+======================================== */
+
+@keyframes exercise-modal-enter {
+from {
+opacity: 0;
+transform: translateY(6px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+

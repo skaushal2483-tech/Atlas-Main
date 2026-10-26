@@ -24,12 +24,21 @@ function Sidebar({ isDark, setIsDark }) {
           Community
         </NavLink>
 
-        <NavLink to="/meals" className="sidebar-link">
-          {/* Use the same icon approach as your other links */}
-          Meal Log
+        <NavLink
+          to="/exercises"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Exercises
         </NavLink>
-        <a>Programs</a>
-        <a>Exercises</a>
+
+        <NavLink to="/workouts">
+          Workouts
+        </NavLink>
+        
+        <NavLink to="/meals">
+          Meals
+        </NavLink>
+        
         <a>Progress</a>
         <a>Membership</a>
         <a>Settings</a>

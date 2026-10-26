@@ -144,35 +144,3 @@
 
 /* Responsive */
 
-@media (max-width: 600px) {
-  .day-log-card {
-    min-height: 290px;
-    padding: 22px;
-  }
-
-  .day-log-card-calories {
-    margin-top: 30px;
-  }
-
-  .day-log-card-calorie-value strong {
-    font-size: 36px;
-  }
-
-  .day-log-card-macros {
-    margin-top: 26px;
-  }
-
-  .day-log-card-macro {
-    padding: 0 10px;
-  }
-
-  .day-log-card-macro strong {
-    font-size: 18px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .day-log-card {
-    transition: none;
-  }
-}
