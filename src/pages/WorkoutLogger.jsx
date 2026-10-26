@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-
 import Sidebar from "../components/shared/Sidebar";
 import WorkoutStats from "../components/workouts/WorkoutStats";
 import AddWorkoutCard from "../components/workouts/AddWorkoutCard";
+import WorkoutCard from "../components/workouts/WorkoutCard";
 import WorkoutModal from "../components/workouts/WorkoutModal";
-
 import "../styles/workouts/WorkoutLogger.css";
 
 const STORAGE_KEY = "atlas_workout_logs";
@@ -14,6 +13,7 @@ function WorkoutLogger({ isDark, setIsDark }) {
   const [hasLoadedWorkouts, setHasLoadedWorkouts] = useState(false);
 
   const [isWorkoutModalOpen, setIsWorkoutModalOpen] = useState(false);
+  const [workoutToEdit, setWorkoutToEdit] = useState(null);
 
   useEffect(() => {
     try {
@@ -44,14 +44,20 @@ function WorkoutLogger({ isDark, setIsDark }) {
   }, [workouts, hasLoadedWorkouts]);
 
   const handleOpenCreateModal = () => {
+    setWorkoutToEdit(null);
+    setIsWorkoutModalOpen(true);
+  };
+
+  const handleEditWorkout = (workout) => {
+    setWorkoutToEdit(workout);
     setIsWorkoutModalOpen(true);
   };
 
   const handleCloseWorkoutModal = () => {
     setIsWorkoutModalOpen(false);
+    setWorkoutToEdit(null);
   };
 
-  // Save a newly created workout
   const handleSaveWorkout = (savedWorkout) => {
     setWorkouts((previousWorkouts) => {
       const exists = previousWorkouts.some(
@@ -70,12 +76,67 @@ function WorkoutLogger({ isDark, setIsDark }) {
     handleCloseWorkoutModal();
   };
 
+  const handleDeleteWorkout = (workoutId) => {
+    const workoutToDelete = workouts.find(
+      (workout) => workout.id === workoutId
+    );
+
+    if (!workoutToDelete) return;
+
+    const confirmed = window.confirm(
+      `Are you sure you want to delete "${workoutToDelete.name}"?`
+    );
+
+    if (!confirmed) return;
+
+    setWorkouts((previousWorkouts) =>
+      previousWorkouts.filter((workout) => workout.id !== workoutId)
+    );
+
+    if (workoutToEdit?.id === workoutId) {
+      handleCloseWorkoutModal();
+    }
+  };
+
+  const getWorkoutTimestamp = (dateString) => {
+    if (!dateString) return 0;
+
+    let parsedDate;
+
+    if (/^\d{2}-\d{2}-\d{4}$/.test(dateString)) {
+      const [day, month, year] = dateString.split("-").map(Number);
+      parsedDate = new Date(year, month - 1, day);
+    } else if (/^\d{4}-\d{2}-\d{2}$/.test(dateString)) {
+      const [year, month, day] = dateString.split("-").map(Number);
+      parsedDate = new Date(year, month - 1, day);
+    } else {
+      parsedDate = new Date(dateString);
+    }
+
+    const timestamp = parsedDate.getTime();
+
+    return Number.isNaN(timestamp) ? 0 : timestamp;
+  };
+
+  const sortedWorkouts = [...workouts].sort((a, b) => {
+    const dateDifference =
+      getWorkoutTimestamp(b.date) - getWorkoutTimestamp(a.date);
+
+    if (dateDifference !== 0) return dateDifference;
+
+    return (
+      new Date(b.createdAt || 0).getTime() -
+      new Date(a.createdAt || 0).getTime()
+    );
+  });
+
   return (
     <div className="workout-logger-page">
       <Sidebar isDark={isDark} setIsDark={setIsDark} />
 
       <main className="workout-logger-main">
         <div className="workout-logger-container">
+
           <header className="workout-logger-header">
             <p className="workout-logger-eyebrow">
               <span className="workout-logger-eyebrow-line" />
@@ -126,7 +187,17 @@ function WorkoutLogger({ isDark, setIsDark }) {
 
             <div className="workout-logger-grid">
               <AddWorkoutCard onClick={handleOpenCreateModal} />
+
+              {sortedWorkouts.map((workout) => (
+                <WorkoutCard
+                  key={workout.id}
+                  workout={workout}
+                  onClick={handleEditWorkout}
+                  onDelete={handleDeleteWorkout}
+                />
+              ))}
             </div>
+
           </section>
         </div>
       </main>
@@ -135,7 +206,7 @@ function WorkoutLogger({ isDark, setIsDark }) {
         isOpen={isWorkoutModalOpen}
         onClose={handleCloseWorkoutModal}
         onSave={handleSaveWorkout}
-        workout={null}
+        workout={workoutToEdit}
       />
     </div>
   );

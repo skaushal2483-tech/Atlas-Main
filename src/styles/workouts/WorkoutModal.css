@@ -41,6 +41,7 @@
 }
 
 
+
 .workout-modal-close {
   position: absolute;
   top: 20px;
@@ -236,7 +237,6 @@
 
 
 
-/* Chrome, Edge, Safari, Opera */
 
 .workout-modal input[type="number"]::-webkit-inner-spin-button,
 .workout-modal input[type="number"]::-webkit-outer-spin-button {
@@ -244,7 +244,6 @@
   margin: 0;
 }
 
-/* Firefox */
 
 .workout-modal input[type="number"] {
   -moz-appearance: textfield;
@@ -291,6 +290,7 @@
 
   background: var(--bg);
 }
+
 
 
 .workout-exercise-header {
@@ -354,7 +354,6 @@
 }
 
 
-
 .workout-set-heading {
   display: grid;
   grid-template-columns: 48px minmax(0, 1fr) minmax(0, 1fr) 28px;
@@ -372,7 +371,6 @@
   letter-spacing: 0.8px;
   text-align: center;
 }
-
 
 
 .workout-set-list {
@@ -605,4 +603,3 @@
 .workout-modal-save:active {
   transform: translateY(0);
 }
-

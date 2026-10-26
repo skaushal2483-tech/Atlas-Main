@@ -37,6 +37,7 @@
 }
 
 
+
 .workout-logger-header {
   width: 100%;
   box-sizing: border-box;
@@ -132,9 +133,11 @@
 }
 
 
+
 .workout-logger-overview {
   margin-bottom: 48px;
 }
+
 
 
 .workout-logger-library {
