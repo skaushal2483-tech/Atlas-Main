@@ -1,0 +1,84 @@
+
+
+.add-workout-card {
+  width: 100%;
+  min-height: 290px;
+
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  box-sizing: border-box;
+
+  background: var(--surface);
+  color: var(--text);
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  font-family: inherit;
+  text-align: center;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.add-workout-card-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--primary);
+  color: #ffffff;
+
+  border-radius: 15px;
+
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.add-workout-card-title {
+  color: var(--text);
+
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+
+.add-workout-card:hover {
+  background: var(--card);
+  border-color: var(--primary);
+
+  transform: translateY(-3px);
+}
+
+.add-workout-card:hover .add-workout-card-icon {
+  background: var(--hover);
+
+  transform: scale(1.06);
+}
+
+
+.add-workout-card:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
