@@ -15,6 +15,9 @@ import Meals from "./pages/MealLog";
 import PR from "./pages/PersonalRecordsPage";
 import DailyMealLog from "./pages/DailyMealLog";
 
+import ProtectedRoute from "./components/authentication/ProtectedRoute";
+import { ThemeContext } from "./context/ThemeContext";
+
 function App() {
   const [isDark, setIsDark] = useState(false);
 
@@ -22,61 +25,25 @@ function App() {
     document.documentElement.classList.toggle("dark", isDark);
   }, [isDark]);
 
-  const pageProps = {
-    isDark,
-    setIsDark,
-  };
-
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={<LandingPage {...pageProps} />}
-        />
+    <ThemeContext.Provider value={{ isDark, setIsDark }}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/auth" element={<Auth />} />
 
-        <Route
-          path="/auth"
-          element={<Auth {...pageProps} />}
-        />
-
-        <Route
-          path="/dashboard"
-          element={<Dashboard {...pageProps} />}
-        />
-
-        <Route
-          path="/community"
-          element={<Community {...pageProps} />}
-        />
-
-        <Route
-          path="/exercises"
-          element={<Exercises {...pageProps} />}
-        />
-
-        <Route
-          path="/workouts"
-          element={<WorkoutLogger {...pageProps} />}
-        />
-
-        <Route
-          path="/meals"
-          element={<Meals {...pageProps} />}
-        />
-
-        <Route
-          path="/pr"
-          element={<PR {...pageProps} />}
-        />
-
-        <Route
-          path="/meals/:date"
-          element={<DailyMealLog {...pageProps} />}
-        />
-
-      </Routes>
-    </BrowserRouter>
+          <Route element={<ProtectedRoute />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/community" element={<Community />} />
+            <Route path="/exercises" element={<Exercises />} />
+            <Route path="/workouts" element={<WorkoutLogger />} />
+            <Route path="/meals" element={<Meals />} />
+            <Route path="/meals/:date" element={<DailyMealLog />} />
+            <Route path="/pr" element={<PR />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeContext.Provider>
   );
 }
 

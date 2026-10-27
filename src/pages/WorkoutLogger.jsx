@@ -5,17 +5,20 @@ import AddWorkoutCard from "../components/workouts/AddWorkoutCard";
 import WorkoutCard from "../components/workouts/WorkoutCard";
 import WorkoutModal from "../components/workouts/WorkoutModal";
 import "../styles/workouts/WorkoutLogger.css";
+import { useTheme } from "../context/ThemeContext";
+
 
 const STORAGE_KEY = "atlas_workout_logs";
 
-function WorkoutLogger({ isDark, setIsDark }) {
+function WorkoutLogger() {
+  const { isDark, setIsDark } = useTheme();
+
   const [workouts, setWorkouts] = useState([]);
   const [hasLoadedWorkouts, setHasLoadedWorkouts] = useState(false);
 
   const [isWorkoutModalOpen, setIsWorkoutModalOpen] = useState(false);
   const [workoutToEdit, setWorkoutToEdit] = useState(null);
 
-  // Load saved workouts
   useEffect(() => {
     try {
       const storedWorkouts = localStorage.getItem(STORAGE_KEY);
@@ -34,7 +37,6 @@ function WorkoutLogger({ isDark, setIsDark }) {
     }
   }, []);
 
-  // Persist workouts without overwriting storage before initial loading
   useEffect(() => {
     if (!hasLoadedWorkouts) return;
 
@@ -45,25 +47,21 @@ function WorkoutLogger({ isDark, setIsDark }) {
     }
   }, [workouts, hasLoadedWorkouts]);
 
-  // Open a blank Create Workout modal
   const handleOpenCreateModal = () => {
     setWorkoutToEdit(null);
     setIsWorkoutModalOpen(true);
   };
 
-  // Open the same modal in Edit mode
   const handleEditWorkout = (workout) => {
     setWorkoutToEdit(workout);
     setIsWorkoutModalOpen(true);
   };
 
-  // Close modal and clear editing state
   const handleCloseWorkoutModal = () => {
     setIsWorkoutModalOpen(false);
     setWorkoutToEdit(null);
   };
 
-  // Save new workout or update existing workout
   const handleSaveWorkout = (savedWorkout) => {
     setWorkouts((previousWorkouts) => {
       const exists = previousWorkouts.some(
@@ -82,7 +80,6 @@ function WorkoutLogger({ isDark, setIsDark }) {
     handleCloseWorkoutModal();
   };
 
-  // Delete workout
   const handleDeleteWorkout = (workoutId) => {
     const workoutToDelete = workouts.find(
       (workout) => workout.id === workoutId
@@ -105,7 +102,6 @@ function WorkoutLogger({ isDark, setIsDark }) {
     }
   };
 
-  // Parse workout dates for sorting
   const getWorkoutTimestamp = (dateString) => {
     if (!dateString) return 0;
 
@@ -140,12 +136,11 @@ function WorkoutLogger({ isDark, setIsDark }) {
 
   return (
     <div className="workout-logger-page">
-      <Sidebar isDark={isDark} setIsDark={setIsDark} />
+      <Sidebar/>
 
       <main className="workout-logger-main">
         <div className="workout-logger-container">
 
-          {/* Premium centered page header */}
           <header className="workout-logger-header">
             <p className="workout-logger-eyebrow">
               <span className="workout-logger-eyebrow-line" />
@@ -171,12 +166,10 @@ function WorkoutLogger({ isDark, setIsDark }) {
             </div>
           </header>
 
-          {/* Training statistics */}
           <section className="workout-logger-overview">
             <WorkoutStats workouts={workouts} />
           </section>
 
-          {/* Centered workout library */}
           <section className="workout-logger-library">
             <div className="workout-logger-section-heading">
               <div>
@@ -213,7 +206,6 @@ function WorkoutLogger({ isDark, setIsDark }) {
         </div>
       </main>
 
-      {/* Shared create/edit modal */}
       <WorkoutModal
         isOpen={isWorkoutModalOpen}
         onClose={handleCloseWorkoutModal}

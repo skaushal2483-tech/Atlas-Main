@@ -1,6 +1,9 @@
 import "../../styles/shared/ThemeToggle.css";
+import {useTheme} from "../../context/ThemeContext"
 
-function ThemeToggle({ isDark, setIsDark }) {
+function ThemeToggle() {
+  const { isDark, setIsDark } = useTheme();
+
 
   function handleThemeToggle() {
     setIsDark(!isDark);

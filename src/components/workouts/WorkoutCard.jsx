@@ -5,7 +5,6 @@ function WorkoutCard({ workout, onClick, onDelete }) {
     ? workout.exercises
     : [];
 
-  // Count all sets across exercises
   const totalSets = exercises.reduce((total, exercise) => {
     if (Array.isArray(exercise.sets)) {
       return total + exercise.sets.length;
@@ -14,7 +13,6 @@ function WorkoutCard({ workout, onClick, onDelete }) {
     return total + Math.max(0, Number(exercise.sets) || 0);
   }, 0);
 
-  // Calculate total volume: weight × reps for every set
   const totalVolume = exercises.reduce((total, exercise) => {
     if (Array.isArray(exercise.sets)) {
       return (
@@ -28,7 +26,6 @@ function WorkoutCard({ workout, onClick, onDelete }) {
       );
     }
 
-    // Support older workout data
     const sets = Math.max(0, Number(exercise.sets) || 0);
     const reps = Math.max(0, Number(exercise.reps) || 0);
     const weight = Math.max(0, Number(exercise.weight) || 0);

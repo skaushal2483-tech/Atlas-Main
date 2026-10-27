@@ -5,6 +5,8 @@ import Sidebar from "../components/shared/Sidebar";
 import MealLogHeader from "../components/meals/MealLogHeader";
 import CalorieTrendCard from "../components/meals/CalorieTrendCard";
 import YourJourney from "../components/meals/YourJourney";
+import { useTheme } from "../context/ThemeContext";
+
 
 import "../styles/meals/MealLog.css";
 
@@ -21,14 +23,15 @@ function getSavedLogs() {
     const parsedLogs = JSON.parse(storedLogs);
 
     return Array.isArray(parsedLogs) ? parsedLogs : [];
-
   } catch (error) {
     console.error("Failed to load saved meal logs:", error);
     return [];
   }
 }
 
-function MealLog({ isDark, setIsDark }) {
+function MealLog() {
+  const { isDark, setIsDark } = useTheme();
+
   const navigate = useNavigate();
   const [logs, setLogs] = useState(getSavedLogs);
 
@@ -37,7 +40,6 @@ function MealLog({ isDark, setIsDark }) {
       setLogs(getSavedLogs());
     };
 
-    // Refresh when returning to this page.
     window.addEventListener("focus", refreshLogs);
     window.addEventListener("storage", refreshLogs);
 
@@ -45,7 +47,6 @@ function MealLog({ isDark, setIsDark }) {
       window.removeEventListener("focus", refreshLogs);
       window.removeEventListener("storage", refreshLogs);
     };
-
   }, []);
 
   const handleAddLog = () => {
@@ -56,23 +57,43 @@ function MealLog({ isDark, setIsDark }) {
     navigate(`/meals/${log.date}`);
   };
 
-  return (<div className="meal-log-page"> <Sidebar isDark={isDark} setIsDark={setIsDark} />
+  const handleDeleteLog = (date) => {
+    try {
+      const updatedLogs = getSavedLogs().filter(
+        (log) => log.date !== date
+      );
 
-    <main className="meal-log-main">
-      <div className="meal-log-container">
-        <MealLogHeader />
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(updatedLogs)
+      );
 
-        <CalorieTrendCard />
+      setLogs(updatedLogs);
+    } catch (error) {
+      console.error("Failed to delete meal log:", error);
+    }
+  };
 
-        <YourJourney
-          logs={logs}
-          onAddLog={handleAddLog}
-          onOpenLog={handleOpenLog}
-        />
-      </div>
-    </main>
-  </div>
 
+  return (
+    <div className="meal-log-page">
+      <Sidebar/>
+
+      <main className="meal-log-main">
+        <div className="meal-log-container">
+          <MealLogHeader />
+
+          <CalorieTrendCard />
+
+          <YourJourney
+            logs={logs}
+            onAddLog={handleAddLog}
+            onOpenLog={handleOpenLog}
+            onDeleteLog={handleDeleteLog}
+          />
+        </div>
+      </main>
+    </div>
   );
 }
 

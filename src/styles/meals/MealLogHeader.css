@@ -10,7 +10,6 @@
   text-align: center;
 }
 
-/* Eyebrow */
 
 .meal-log-header-eyebrow {
   display: flex;
@@ -35,7 +34,6 @@
   opacity: 0.8;
 }
 
-/* Main title */
 
 .meal-log-header-title {
   display: flex;
@@ -57,7 +55,6 @@
   color: var(--primary);
 }
 
-/* Description */
 
 .meal-log-header-description {
   max-width: 490px;
@@ -70,7 +67,6 @@
   line-height: 2;
 }
 
-/* Decorative divider */
 
 .meal-log-header-divider {
   display: flex;

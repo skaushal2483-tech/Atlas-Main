@@ -1,8 +1,11 @@
 import "../../styles/landing/Hero.css";
 import { Link } from "react-router-dom";
+import { useTheme } from "../../context/ThemeContext";
 
 
-function Hero({ isDark }) {
+function Hero() {
+  const { isDark, setIsDark } = useTheme();
+
   return (
     <section className="hero">
       <video

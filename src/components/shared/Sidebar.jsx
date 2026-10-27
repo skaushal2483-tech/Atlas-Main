@@ -1,9 +1,12 @@
 import { NavLink, Link } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
+import { useTheme } from "../../context/ThemeContext";
 
 import "../../styles/shared/Sidebar.css";
 
-function Sidebar({ isDark, setIsDark }) {
+function Sidebar() {
+  const { isDark, setIsDark } = useTheme();
+
   return (
     <aside className="sidebar">
       <div className="sidebar-logo">
@@ -34,21 +37,18 @@ function Sidebar({ isDark, setIsDark }) {
         <NavLink to="/workouts">
           Workouts
         </NavLink>
-        
+
         <NavLink to="/meals">
           Meals
         </NavLink>
-        
+
         <a>Progress</a>
         <a>Membership</a>
         <a>Settings</a>
       </nav>
 
       <div className="sidebar-theme">
-        <ThemeToggle
-          isDark={isDark}
-          setIsDark={setIsDark}
-        />
+        <ThemeToggle/>
       </div>
     </aside>
   );

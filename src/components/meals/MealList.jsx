@@ -22,7 +22,6 @@ function MealList({ meals = [], onAddMeal }) {
       <div className="meal-list-divider" />
 
       <div className="meal-list-grid">
-        {/* Add Meal Card */}
         <button
           type="button"
           className="meal-list-add-card"
@@ -32,7 +31,6 @@ function MealList({ meals = [], onAddMeal }) {
           <span className="meal-list-add-label">Add Meal</span>
         </button>
 
-        {/* Saved Meal Cards */}
         {meals.map((meal) => {
           const foods = Array.isArray(meal.foods)
             ? meal.foods

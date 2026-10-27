@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import {useTheme} from "../../context/ThemeContext"
 
 import ThemeToggle from "./ThemeToggle";
 
 import "../../styles/shared/Navbar.css";
 
 function Navbar({
-  isDark,
-  setIsDark,
   scrollToWhy,
   scrollToPrograms,
   scrollToMemberships,
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isDark, setIsDark } = useTheme();
+
   const location = useLocation();
 
   const isLandingPage = location.pathname === "/";

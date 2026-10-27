@@ -7,8 +7,12 @@ import Why from "../components/landing/Why";
 import Programs from "../components/landing/Programs";
 import Memberships from "../components/landing/Memberships";
 import Footer from "../components/shared/Footer";
+import { useTheme } from "../context/ThemeContext";
 
-function LandingPage({ isDark, setIsDark }) {
+
+function LandingPage() {
+  const { isDark, setIsDark } = useTheme();
+
   const whyRef = useRef(null);
   const programsRef = useRef(null);
   const membershipsRef = useRef(null);
@@ -23,8 +27,6 @@ function LandingPage({ isDark, setIsDark }) {
   return (
     <>
       <Navbar
-        isDark={isDark}
-        setIsDark={setIsDark}
         scrollToWhy={() => scrollToSection(whyRef)}
         scrollToPrograms={() => scrollToSection(programsRef)}
         scrollToMemberships={() =>

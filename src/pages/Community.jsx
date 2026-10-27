@@ -5,17 +5,18 @@ import Leaderboard from "../components/community/Leaderboard";
 import Trending from "../components/community/Trending";
 import Filters from "../components/community/Filters";
 import Posts from "../components/community/Posts";
+import { useTheme } from "../context/ThemeContext";
+
 
 import "../styles/community/Community.css";
 
-function Community({ isDark, setIsDark }) {
+function Community() {
+  const { isDark, setIsDark } = useTheme();
+
   return (
     <div className="community-layout">
 
-      <Sidebar
-        isDark={isDark}
-        setIsDark={setIsDark}
-      />
+      <Sidebar/>
 
       <main className="community-main">
 

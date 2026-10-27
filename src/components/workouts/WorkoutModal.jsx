@@ -54,7 +54,6 @@ function WorkoutModal({
 
   const isEditing = Boolean(workout);
 
-  // Initialize the form when opening or switching workouts.
   useEffect(() => {
     if (!isOpen) return;
 
@@ -77,9 +76,7 @@ function WorkoutModal({
 
   if (!isOpen) return null;
 
-  // -----------------------------------------
-  // EXERCISE ACTIONS
-  // -----------------------------------------
+
 
   const handleAddExercise = () => {
     setExercises((previous) => [
@@ -104,9 +101,7 @@ function WorkoutModal({
     );
   };
 
-  // -----------------------------------------
-  // SET ACTIONS
-  // -----------------------------------------
+
 
   const handleAddSet = (exerciseId) => {
     setExercises((previous) =>
@@ -166,9 +161,7 @@ function WorkoutModal({
     );
   };
 
-  // -----------------------------------------
-  // VALIDATION AND SAVE
-  // -----------------------------------------
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -183,7 +176,6 @@ function WorkoutModal({
       return;
     }
 
-    // Ignore exercise cards that have not been named.
     const validExercises = exercises.filter(
       (exercise) => exercise.name.trim()
     );
@@ -247,12 +239,9 @@ function WorkoutModal({
     onSave(savedWorkout);
   };
 
-  // -----------------------------------------
-  // MODAL UI
-  // -----------------------------------------
+
 
   return (
-    // No backdrop click handler: clicking outside will not close the modal.
     <div className="workout-modal-overlay">
       <section
         className="workout-modal"
@@ -260,7 +249,6 @@ function WorkoutModal({
         aria-modal="true"
         aria-labelledby="workout-modal-title"
       >
-        {/* The cross is the only close control. */}
         <button
           type="button"
           className="workout-modal-close"
@@ -274,7 +262,6 @@ function WorkoutModal({
           className="workout-modal-form"
           onSubmit={handleSubmit}
         >
-          {/* Single centered heading */}
 
           <header className="workout-modal-header">
             <h2 id="workout-modal-title">
@@ -282,7 +269,6 @@ function WorkoutModal({
             </h2>
           </header>
 
-          {/* Workout name and manually entered date */}
 
           <section className="workout-modal-details">
             <label className="workout-modal-field">
@@ -318,7 +304,6 @@ function WorkoutModal({
             </label>
           </section>
 
-          {/* Exercise cards */}
 
           <section className="workout-modal-exercises">
             {exercises.map((exercise, exerciseIndex) => (
@@ -348,7 +333,6 @@ function WorkoutModal({
                   </button>
                 </header>
 
-                {/* Exercise name and muscle group */}
 
                 <div className="workout-exercise-details">
                   <label className="workout-modal-field">
@@ -394,7 +378,6 @@ function WorkoutModal({
                   </label>
                 </div>
 
-                {/* Set headings */}
 
                 <div className="workout-set-heading">
                   <span>SET</span>
@@ -403,7 +386,6 @@ function WorkoutModal({
                   <span aria-hidden="true" />
                 </div>
 
-                {/* Individual sets */}
 
                 <div className="workout-set-list">
                   {exercise.sets.map((set) => (
@@ -467,7 +449,6 @@ function WorkoutModal({
                   ))}
                 </div>
 
-                {/* Add set */}
 
                 <button
                   type="button"
@@ -481,7 +462,6 @@ function WorkoutModal({
             ))}
           </section>
 
-          {/* Add exercise */}
 
           <button
             type="button"
@@ -492,7 +472,6 @@ function WorkoutModal({
             Add Exercise
           </button>
 
-          {/* Centered save button */}
 
           <footer className="workout-modal-footer">
             <button

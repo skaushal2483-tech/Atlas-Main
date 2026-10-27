@@ -1,82 +1,76 @@
 .your-journey {
-width: 100%;
-margin-top: 46px;
-color: var(--text);
+  width: 100%;
+  margin-top: 46px;
+  color: var(--text);
 }
 
-/* Section header */
 
 .your-journey-header {
-display: flex;
-flex-direction: column;
-align-items: center;
-text-align: center;
-margin-bottom: 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 34px;
 }
 
-/* Red eyebrow */
 
 .your-journey-eyebrow {
-color: var(--primary);
-font-size: 10px;
-font-weight: 750;
-letter-spacing: 3px;
-line-height: 1.6;
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 3px;
+  line-height: 1.6;
 }
 
-/* Main title */
 
 .your-journey-title {
-margin: 15px 0 0;
-color: var(--text);
-font-size: clamp(34px, 4vw, 44px);
-font-weight: 800;
-letter-spacing: -1.8px;
-line-height: 1.15;
+  margin: 15px 0 0;
+  color: var(--text);
+  font-size: clamp(34px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -1.8px;
+  line-height: 1.15;
 }
 
 .your-journey-title span {
-color: var(--primary);
+  color: var(--primary);
 }
 
-/* Subtitle */
 
 .your-journey-subtitle {
-margin: 13px 0 0;
-color: var(--text2);
-font-size: 13px;
-font-weight: 400;
-letter-spacing: 0.2px;
-line-height: 1.8;
+  margin: 13px 0 0;
+  color: var(--text2);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  line-height: 1.8;
 }
 
-/* Logged-day count */
 
 .your-journey-count {
-display: inline-flex;
-align-items: center;
-justify-content: center;
-margin-top: 18px;
-padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+  padding: 8px 14px;
 
-color: var(--primary);
-background: var(--card);
-border: 1px solid var(--border);
-border-radius: 30px;
+  color: var(--primary);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 30px;
 
-font-size: 9px;
-font-weight: 750;
-letter-spacing: 1.5px;
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 1.5px;
 }
 
-/* Minimal decorative divider */
 
 .your-journey-divider {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 7px;
-margin-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 22px;
 }
 
 
@@ -89,20 +83,16 @@ margin-top: 22px;
 }
 
 .your-journey-divider span:nth-child(2) {
-width: 7px;
-height: 7px;
-background: var(--primary);
-transform: rotate(45deg);
+  width: 7px;
+  height: 7px;
+  background: var(--primary);
+  transform: rotate(45deg);
 }
 
-/* Cards grid */
 
 .your-journey-grid {
-display: grid;
-grid-template-columns: repeat(3, minmax(0, 1fr));
-gap: 18px;
-align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
 }
-
-
-

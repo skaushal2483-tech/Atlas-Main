@@ -1,6 +1,4 @@
-/* =========================================
-   ATLAS — PERSONAL RECORDS HEADER
-========================================= */
+
 
 .pr-header {
   width: 100%;
@@ -15,7 +13,6 @@
   box-sizing: border-box;
 }
 
-/* Eyebrow */
 .pr-header-eyebrow {
   display: flex;
   align-items: center;
@@ -30,7 +27,6 @@
   letter-spacing: 2.5px;
 }
 
-/* Eyebrow lines */
 .pr-header-line {
   width: 28px;
   height: 1px;
@@ -39,7 +35,6 @@
   opacity: 0.7;
 }
 
-/* Main heading */
 .pr-header-title {
   margin: 0;
 
@@ -50,12 +45,10 @@
   letter-spacing: -2px;
 }
 
-/* Accent */
 .pr-header-title span {
   color: var(--primary);
 }
 
-/* Subtitle */
 .pr-header-subtitle {
   margin: 16px 0 0;
 
@@ -65,7 +58,6 @@
   line-height: 1.6;
 }
 
-/* Decorative divider */
 .pr-header-divider {
   width: min(280px, 70%);
   margin-top: 30px;
