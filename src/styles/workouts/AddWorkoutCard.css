@@ -1,4 +1,6 @@
-
+/* =========================================
+   ATLAS — ADD WORKOUT CARD
+========================================= */
 
 .add-workout-card {
   width: 100%;
@@ -31,6 +33,7 @@
     transform 0.3s ease;
 }
 
+/* Plus icon */
 
 .add-workout-card-icon {
   width: 40px;
@@ -54,6 +57,7 @@
     transform 0.3s ease;
 }
 
+/* Card title */
 
 .add-workout-card-title {
   color: var(--text);
@@ -63,6 +67,7 @@
   letter-spacing: 0.2px;
 }
 
+/* Hover effect — matches Add Log */
 
 .add-workout-card:hover {
   background: var(--card);
@@ -77,9 +82,21 @@
   transform: scale(1.06);
 }
 
+/* Keyboard accessibility */
 
 .add-workout-card:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 4px;
 }
 
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .add-workout-card {
+    min-height: 220px;
+    padding: 24px;
+    border-radius: 14px;
+  }
+}

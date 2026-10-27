@@ -1,0 +1,95 @@
+/* =========================================
+   ATLAS — PERSONAL RECORDS HEADER
+========================================= */
+
+.pr-header {
+  width: 100%;
+  margin: 0 auto 48px;
+  padding: 32px 0 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Eyebrow */
+.pr-header-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  margin: 0 0 20px;
+
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+/* Eyebrow lines */
+.pr-header-line {
+  width: 28px;
+  height: 1px;
+
+  background: var(--primary);
+  opacity: 0.7;
+}
+
+/* Main heading */
+.pr-header-title {
+  margin: 0;
+
+  color: var(--text);
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+/* Accent */
+.pr-header-title span {
+  color: var(--primary);
+}
+
+/* Subtitle */
+.pr-header-subtitle {
+  margin: 16px 0 0;
+
+  color: var(--text2);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Decorative divider */
+.pr-header-divider {
+  width: min(280px, 70%);
+  margin-top: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.pr-header-divider-line {
+  flex: 1;
+  height: 1px;
+
+  background: var(--border);
+}
+
+.pr-header-divider-mark {
+  width: 7px;
+  height: 7px;
+
+  background: var(--primary);
+  border-radius: 2px;
+
+  transform: rotate(45deg);
+}
+

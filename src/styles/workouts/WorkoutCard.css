@@ -1,3 +1,7 @@
+/* =========================================
+   ATLAS — WORKOUT CARD
+   Minimal dashboard-inspired design
+========================================= */
 
 .workout-card {
   position: relative;
@@ -24,6 +28,7 @@
     box-shadow 0.25s ease;
 }
 
+/* Subtle hover effect */
 .workout-card:hover {
   border-color: var(--primary);
   transform: translateY(-3px);
@@ -35,6 +40,7 @@
   outline-offset: 4px;
 }
 
+/* Main content */
 .workout-card-content {
   width: 100%;
   display: flex;
@@ -43,6 +49,7 @@
   text-align: center;
 }
 
+/* Workout name */
 .workout-card-title {
   width: 100%;
   margin: 0 0 22px;
@@ -57,6 +64,7 @@
   overflow-wrap: anywhere;
 }
 
+/* Total volume */
 .workout-card-volume {
   display: flex;
   align-items: baseline;
@@ -66,6 +74,7 @@
   margin-bottom: 5px;
 }
 
+/* Large volume number */
 .workout-card-volume-value {
   color: var(--text);
 
@@ -75,6 +84,7 @@
   letter-spacing: -1.5px;
 }
 
+/* Unit accent */
 .workout-card-volume-unit {
   color: var(--primary);
 
@@ -82,6 +92,7 @@
   font-weight: 700;
 }
 
+/* Total volume label */
 .workout-card-volume-label {
   color: var(--text2);
 
@@ -91,6 +102,7 @@
   text-transform: uppercase;
 }
 
+/* Horizontal divider */
 .workout-card-divider {
   width: 100%;
   height: 1px;
@@ -100,6 +112,7 @@
   background: var(--border);
 }
 
+/* Bottom statistics */
 .workout-card-stats {
   width: 100%;
 
@@ -108,6 +121,7 @@
   align-items: stretch;
 }
 
+/* Individual stat */
 .workout-card-stat {
   min-width: 0;
 
@@ -120,6 +134,7 @@
   padding: 0 8px;
 }
 
+/* Stat numbers */
 .workout-card-stat-value {
   color: var(--text);
 
@@ -128,6 +143,7 @@
   line-height: 1.2;
 }
 
+/* Stat labels */
 .workout-card-stat-label {
   color: var(--text2);
 
@@ -137,6 +153,7 @@
   text-transform: uppercase;
 }
 
+/* Vertical separator */
 .workout-card-stat-divider {
   width: 1px;
   align-self: stretch;
@@ -144,6 +161,7 @@
   background: var(--border);
 }
 
+/* Delete button */
 .workout-card-delete {
   position: absolute;
   top: 14px;
@@ -191,4 +209,57 @@
   opacity: 1;
   outline: 2px solid var(--primary);
   outline-offset: 3px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+  .workout-card {
+    min-height: 265px;
+    padding: 25px;
+    border-radius: 18px;
+  }
+
+  .workout-card-title {
+    font-size: 19px;
+    margin-bottom: 18px;
+  }
+
+  .workout-card-volume-value {
+    font-size: 40px;
+  }
+
+  .workout-card-divider {
+    margin: 22px 0 20px;
+  }
+
+  .workout-card-stat-value {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 480px) {
+  .workout-card {
+    min-height: 250px;
+    padding: 22px;
+  }
+
+  .workout-card-title {
+    font-size: 18px;
+  }
+
+  .workout-card-volume-value {
+    font-size: 36px;
+  }
+
+  .workout-card-stat-label {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .workout-card-delete {
+    opacity: 1;
+  }
 }

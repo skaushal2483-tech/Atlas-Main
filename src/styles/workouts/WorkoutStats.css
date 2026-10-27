@@ -1,9 +1,15 @@
+/* =========================================
+   ATLAS WORKOUT STATS
+========================================= */
+
 .workout-stats {
   width: 100%;
   margin: 0 0 38px;
 }
 
-
+/* =========================================
+   SECTION HEADER
+========================================= */
 
 .workout-stats-header {
   display: flex;
@@ -34,7 +40,9 @@
   background: var(--primary);
 }
 
-
+/* =========================================
+   STATS GRID
+========================================= */
 
 .workout-stats-grid {
   display: grid;
@@ -44,7 +52,9 @@
   width: 100%;
 }
 
-
+/* =========================================
+   STAT CARDS
+========================================= */
 
 .workout-stat-card {
   display: flex;
@@ -75,6 +85,7 @@
   transform: translateY(-2px);
 }
 
+/* Statistic number */
 
 .workout-stat-value {
   max-width: 100%;
@@ -90,6 +101,7 @@
   overflow-wrap: anywhere;
 }
 
+/* Statistic label */
 
 .workout-stat-label {
   margin: 12px 0 0;

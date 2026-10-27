@@ -35,7 +35,9 @@ function Sidebar({ isDark, setIsDark }) {
           Workouts
         </NavLink>
         
-        <a>Programs</a>
+        <NavLink to="/meals">
+          Meals
+        </NavLink>
         
         <a>Progress</a>
         <a>Membership</a>

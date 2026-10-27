@@ -1,4 +1,6 @@
-
+/* =========================================
+   WORKOUT LOGGER PAGE
+========================================= */
 
 .workout-logger-page {
   display: flex;
@@ -36,7 +38,9 @@
   margin: 0 auto;
 }
 
-
+/* =========================================
+   PREMIUM MAIN HEADER
+========================================= */
 
 .workout-logger-header {
   width: 100%;
@@ -132,13 +136,17 @@
   transform: rotate(45deg);
 }
 
-
+/* =========================================
+   TRAINING STATS SECTION
+========================================= */
 
 .workout-logger-overview {
   margin-bottom: 48px;
 }
 
-
+/* =========================================
+   WORKOUT LIBRARY HEADER
+========================================= */
 
 .workout-logger-library {
   width: 100%;
@@ -191,7 +199,9 @@
   line-height: 1.7;
 }
 
-
+/* =========================================
+   FULL-WIDTH PREMIUM DIVIDER
+========================================= */
 
 .workout-library-divider {
   position: relative;
@@ -219,7 +229,9 @@
   transform: rotate(45deg);
 }
 
-
+/* =========================================
+   WORKOUT GRID
+========================================= */
 
 .workout-logger-grid {
   display: grid;

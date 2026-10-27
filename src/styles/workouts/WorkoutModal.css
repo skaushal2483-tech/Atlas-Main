@@ -1,4 +1,6 @@
-
+/* =========================================
+   ATLAS — PREMIUM WORKOUT MODAL
+========================================= */
 
 .workout-modal-overlay {
   position: fixed;
@@ -17,7 +19,9 @@
   -webkit-backdrop-filter: blur(5px);
 }
 
-
+/* =========================================
+   MODAL CONTAINER
+========================================= */
 
 .workout-modal {
   position: relative;
@@ -40,7 +44,9 @@
   border-radius: 8px;
 }
 
-
+/* =========================================
+   CLOSE BUTTON
+========================================= */
 
 .workout-modal-close {
   position: absolute;
@@ -80,7 +86,9 @@
   background: var(--surface);
 }
 
-
+/* =========================================
+   SCROLLABLE FORM
+========================================= */
 
 .workout-modal-form {
   display: flex;
@@ -116,7 +124,9 @@
   border-radius: 10px;
 }
 
-
+/* =========================================
+   CENTERED HEADING
+========================================= */
 
 .workout-modal-header {
   display: flex;
@@ -153,6 +163,7 @@
   text-transform: uppercase;
 }
 
+/* Ensure heading remains centered despite other CSS rules */
 
 .workout-modal .workout-modal-header {
   justify-content: center;
@@ -164,7 +175,9 @@
   text-align: center;
 }
 
-
+/* =========================================
+   ACCESSIBLE HIDDEN LABELS
+========================================= */
 
 .sr-only {
   position: absolute;
@@ -182,7 +195,9 @@
   border: 0;
 }
 
-
+/* =========================================
+   SHARED INPUTS
+========================================= */
 
 .workout-modal-field {
   display: flex;
@@ -235,8 +250,11 @@
   border-color: var(--primary);
 }
 
+/* =========================================
+   REMOVE NUMBER INPUT ARROWS
+========================================= */
 
-
+/* Chrome, Edge, Safari, Opera */
 
 .workout-modal input[type="number"]::-webkit-inner-spin-button,
 .workout-modal input[type="number"]::-webkit-outer-spin-button {
@@ -244,13 +262,16 @@
   margin: 0;
 }
 
+/* Firefox */
 
 .workout-modal input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
 
-
+/* =========================================
+   WORKOUT NAME + DATE
+========================================= */
 
 .workout-modal-details {
   display: grid;
@@ -261,7 +282,9 @@
   min-width: 0;
 }
 
-
+/* =========================================
+   EXERCISE COLLECTION
+========================================= */
 
 .workout-modal-exercises {
   display: flex;
@@ -272,7 +295,9 @@
   min-width: 0;
 }
 
-
+/* =========================================
+   EXERCISE CARD
+========================================= */
 
 .workout-exercise-card {
   display: flex;
@@ -291,7 +316,9 @@
   background: var(--bg);
 }
 
-
+/* =========================================
+   EXERCISE HEADER
+========================================= */
 
 .workout-exercise-header {
   display: flex;
@@ -342,7 +369,9 @@
   border-color: var(--primary);
 }
 
-
+/* =========================================
+   EXERCISE NAME + MUSCLE GROUP
+========================================= */
 
 .workout-exercise-details {
   display: grid;
@@ -353,6 +382,9 @@
   min-width: 0;
 }
 
+/* =========================================
+   SET TABLE HEADINGS
+========================================= */
 
 .workout-set-heading {
   display: grid;
@@ -372,6 +404,9 @@
   text-align: center;
 }
 
+/* =========================================
+   SET ROWS
+========================================= */
 
 .workout-set-list {
   display: flex;
@@ -429,6 +464,9 @@
   opacity: 0.7;
 }
 
+/* =========================================
+   REMOVE SET BUTTON
+========================================= */
 
 .workout-set-remove {
   display: flex;
@@ -467,7 +505,9 @@
   cursor: not-allowed;
 }
 
-
+/* =========================================
+   ADD SET
+========================================= */
 
 .workout-add-set {
   display: flex;
@@ -505,7 +545,9 @@
   color: var(--primary);
 }
 
-
+/* =========================================
+   ADD EXERCISE
+========================================= */
 
 .workout-add-exercise {
   display: flex;
@@ -550,7 +592,9 @@
   color: var(--primary);
 }
 
-
+/* =========================================
+   CENTERED SAVE WORKOUT BUTTON
+========================================= */
 
 .workout-modal-footer {
   display: flex;
@@ -602,4 +646,107 @@
 
 .workout-modal-save:active {
   transform: translateY(0);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 600px) {
+  .workout-modal-overlay {
+    padding: 12px;
+  }
+
+  .workout-modal {
+    max-height: calc(100vh - 24px);
+    max-height: calc(100dvh - 24px);
+  }
+
+  .workout-modal-form {
+    gap: 23px;
+    padding: 27px 18px 22px;
+  }
+
+  .workout-modal-close {
+    top: 12px;
+    right: 12px;
+  }
+
+  .workout-modal-header {
+    padding: 16px 35px 22px;
+  }
+
+  .workout-modal-header h2 {
+    font-size: 22px;
+    letter-spacing: 0.8px;
+  }
+
+  .workout-modal-details {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .workout-exercise-card {
+    padding: 15px;
+    gap: 16px;
+  }
+
+  .workout-exercise-details {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .workout-set-heading,
+  .workout-set-row {
+    grid-template-columns: 32px minmax(0, 1fr) minmax(0, 1fr) 25px;
+    gap: 7px;
+  }
+
+  .workout-set-heading {
+    font-size: 8px;
+    letter-spacing: 0.2px;
+  }
+
+  .workout-set-row input {
+    height: 40px;
+    padding: 7px;
+  }
+
+  .workout-set-remove {
+    width: 25px;
+    height: 25px;
+  }
+
+  .workout-modal-footer {
+    padding-top: 3px;
+  }
+}
+
+@media (max-width: 360px) {
+  .workout-modal-form {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .workout-exercise-card {
+    padding: 12px;
+  }
+
+  .workout-set-heading,
+  .workout-set-row {
+    grid-template-columns: 27px minmax(0, 1fr) minmax(0, 1fr) 22px;
+    gap: 5px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .workout-modal *,
+  .workout-modal *::before,
+  .workout-modal *::after {
+    transition-duration: 0.01ms !important;
+  }
 }

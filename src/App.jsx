@@ -11,6 +11,9 @@ import Community from "./pages/Community";
 import Auth from "./pages/Authentication";
 import Exercises from "./pages/Exercises";
 import WorkoutLogger from "./pages/WorkoutLogger";
+import Meals from "./pages/MealLog";
+import PR from "./pages/PersonalRecordsPage";
+import DailyMealLog from "./pages/DailyMealLog";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -19,68 +22,59 @@ function App() {
     document.documentElement.classList.toggle("dark", isDark);
   }, [isDark]);
 
+  const pageProps = {
+    isDark,
+    setIsDark,
+  };
+
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path="/"
-          element={
-            <LandingPage
-              isDark={isDark}
-              setIsDark={setIsDark}
-            />
-          }
+          element={<LandingPage {...pageProps} />}
         />
 
         <Route
           path="/auth"
-          element={
-            <Auth
-              isDark={isDark}
-              setIsDark={setIsDark}
-            />
-          }
+          element={<Auth {...pageProps} />}
         />
 
         <Route
           path="/dashboard"
-          element={
-            <Dashboard
-              isDark={isDark}
-              setIsDark={setIsDark}
-            />
-          }
+          element={<Dashboard {...pageProps} />}
         />
 
         <Route
           path="/community"
-          element={
-            <Community
-              isDark={isDark}
-              setIsDark={setIsDark}
-            />
-          }
+          element={<Community {...pageProps} />}
         />
 
         <Route
           path="/exercises"
-          element={
-            <Exercises
-              isDark={isDark}
-              setIsDark={setIsDark}
-            />
-          }
+          element={<Exercises {...pageProps} />}
         />
 
         <Route
           path="/workouts"
-          element={
-            <WorkoutLogger
-              isDark={isDark}
-              setIsDark={setIsDark}
-            />
-          }
+          element={<WorkoutLogger {...pageProps} />}
         />
+
+        <Route
+          path="/meals"
+          element={<Meals {...pageProps} />}
+        />
+
+        <Route
+          path="/pr"
+          element={<PR {...pageProps} />}
+        />
+
+        <Route
+          path="/meals/:date"
+          element={<DailyMealLog {...pageProps} />}
+        />
+
       </Routes>
     </BrowserRouter>
   );

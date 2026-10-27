@@ -1,0 +1,236 @@
+.meal-list-section {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+/* Heading */
+.meal-list-header {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.meal-list-heading {
+    min-width: 0;
+}
+
+.meal-list-eyebrow {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--primary);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.meal-list-heading h2 {
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(26px, 3vw, 34px);
+    font-weight: 850;
+    letter-spacing: -1px;
+}
+
+.meal-list-heading h2 span {
+    color: var(--primary);
+}
+
+.meal-list-heading p {
+    margin: 9px 0 0;
+    color: var(--text2);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Separator below heading */
+.meal-list-divider {
+    width: 100%;
+    height: 1px;
+    margin-bottom: 24px;
+    background: var(--border);
+}
+
+/* Horizontal card grid */
+.meal-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    align-items: stretch;
+    gap: 20px;
+}
+
+/* Add Meal card */
+.meal-list-add-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 0;
+    min-height: 210px;
+    padding: 24px;
+    border: 1px dashed var(--border);
+    border-radius: 16px;
+    background: var(--card);
+    color: var(--text);
+    font-family: inherit;
+    cursor: pointer;
+    transition:
+        transform 0.22s ease,
+        border-color 0.22s ease,
+        background 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+.meal-list-add-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+    background: var(--surface);
+}
+
+.meal-list-add-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 15px;
+    background: var(--surface);
+    color: var(--primary);
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1;
+    transition:
+        background 0.22s ease,
+        color 0.22s ease;
+}
+
+.meal-list-add-card:hover .meal-list-add-icon {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.meal-list-add-label {
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.meal-list-add-card:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+/* Saved meal cards */
+.meal-list-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--card);
+    color: var(--text);
+    transition:
+        transform 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+.meal-list-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary);
+}
+
+/* Meal heading and total calories */
+.meal-list-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.meal-list-card-header h3 {
+    margin: 0;
+    overflow-wrap: anywhere;
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.meal-list-total-calories {
+    flex-shrink: 0;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* Food entries */
+.meal-list-foods {
+    display: flex;
+    flex-direction: column;
+}
+
+.meal-list-food {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 22px 20px;
+}
+
+.meal-list-food+.meal-list-food {
+    border-top: 1px solid var(--border);
+}
+
+.meal-list-food-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.meal-list-food-name {
+    overflow-wrap: anywhere;
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+/* Protein, carbs and fats */
+.meal-list-macros {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+}
+
+.meal-list-macros>span {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+    padding: 12px 5px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg);
+    transition: border-color 0.2s ease;
+}
+
+.meal-list-macros strong {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.meal-list-macros small {
+    color: var(--text2);
+    font-size: 11px;
+}
+
+.meal-list-card:hover .meal-list-macros>span {
+    border-color: var(--border);
+}

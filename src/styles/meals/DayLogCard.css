@@ -1,0 +1,146 @@
+.day-log-card {
+  width: 100%;
+  min-height: 312px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  color: var(--text);
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.day-log-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.day-log-card:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+/* Date and label */
+
+.day-log-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.day-log-card-label {
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.day-log-card-date {
+  color: var(--text2);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Calories */
+
+.day-log-card-calories {
+  margin-top: 36px;
+}
+
+.day-log-card-caption {
+  display: block;
+  color: var(--text2);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+}
+
+.day-log-card-calorie-value {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  margin-top: 10px;
+}
+
+.day-log-card-calorie-value strong {
+  color: var(--text);
+  font-size: clamp(32px, 3vw, 40px);
+  font-weight: 800;
+  letter-spacing: -1.8px;
+  line-height: 1.1;
+}
+
+.day-log-card-calorie-value span {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Subtle divider */
+
+.day-log-card-calorie-line {
+  height: 2px;
+  width: 100%;
+  margin-top: 24px;
+  background: var(--border);
+  border-radius: 10px;
+}
+
+/* Balanced macro layout */
+
+.day-log-card-macros {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 30px;
+}
+
+.day-log-card-macro {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 16px;
+  border-left: 1px solid var(--border);
+}
+
+.day-log-card-macro:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+
+.day-log-card-macro:last-child {
+  padding-right: 0;
+}
+
+.day-log-card-macro > span {
+  color: var(--text2);
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 1.2px;
+}
+
+.day-log-card-macro strong {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+}
+
+.day-log-card-macro small {
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Responsive */
+
