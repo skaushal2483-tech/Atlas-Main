@@ -1,9 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import "../../styles/authentication/Login.css";
 
 function Login({ onSwitch }) {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const redirectTo =
+    location.state?.from?.pathname || "/dashboard";
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -29,6 +35,8 @@ function Login({ onSwitch }) {
   }
 
   function handleLogin(event) {
+    event.preventDefault();
+
     const email = formData.email.trim().toLowerCase();
     const password = formData.password;
 
@@ -45,7 +53,6 @@ function Login({ onSwitch }) {
     }
 
     if (Object.keys(newErrors).length > 0) {
-      event.preventDefault();
       setErrors(newErrors);
       return;
     }
@@ -53,27 +60,33 @@ function Login({ onSwitch }) {
     const storedUser = localStorage.getItem("atlasUser");
 
     if (!storedUser) {
-      event.preventDefault();
-
       setErrors({
         submit: "No account found. Please sign up first.",
+      });
+      return;
+    }
+
+    let user;
+
+    try {
+      user = JSON.parse(storedUser);
+    } catch (error) {
+      console.error("Failed to read saved account:", error);
+
+      setErrors({
+        submit: "Unable to read your account. Please sign up again.",
       });
 
       return;
     }
 
-    const user = JSON.parse(storedUser);
-
     if (
       user.email !== email ||
       user.password !== password
     ) {
-      event.preventDefault();
-
       setErrors({
         submit: "Incorrect email or password.",
       });
-
       return;
     }
 
@@ -88,17 +101,21 @@ function Login({ onSwitch }) {
     );
 
     setErrors({});
+
+    navigate(redirectTo, { replace: true });
   }
 
   return (
     <section className="login-card">
-
       <h1 className="login-title">
         Train. Track. <span>Improve.</span>
       </h1>
 
-      <div className="login-form">
-
+      <form
+        className="login-form"
+        onSubmit={handleLogin}
+        noValidate
+      >
         <div className="login-field">
           <input
             id="login-email"
@@ -141,15 +158,13 @@ function Login({ onSwitch }) {
           </p>
         )}
 
-        <Link
-          to="/dashboard"
+        <button
+          type="submit"
           className="login-submit"
-          onClick={handleLogin}
         >
           Login
-        </Link>
-
-      </div>
+        </button>
+      </form>
 
       <div className="login-switch">
         <span>Don't have an account?</span>
@@ -161,7 +176,6 @@ function Login({ onSwitch }) {
           Sign up
         </button>
       </div>
-
     </section>
   );
 }

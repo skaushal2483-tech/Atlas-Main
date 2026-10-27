@@ -7,6 +7,8 @@ import NutritionSummary from "../components/meals/NutritionSummary";
 import NutritionTargets from "../components/meals/NutritionTargets";
 import MealList from "../components/meals/MealList";
 import AddMealModal from "../components/meals/AddMealModal";
+import { useTheme } from "../context/ThemeContext";
+
 
 import "../styles/meals/DailyMealLog.css";
 
@@ -67,7 +69,9 @@ function saveDailyLog(date, targets, meals) {
   );
 }
 
-function DailyMealLog({ isDark, setIsDark }) {
+function DailyMealLog() {
+  const { isDark, setIsDark } = useTheme();
+
   const navigate = useNavigate();
   const { date: routeDate } = useParams();
 
@@ -211,10 +215,7 @@ function DailyMealLog({ isDark, setIsDark }) {
 
   return (
     <div className="daily-meal-log-page">
-      <Sidebar
-        isDark={isDark}
-        setIsDark={setIsDark}
-      />
+      <Sidebar/>
 
       <main className="daily-meal-log-main">
         <div className="daily-meal-log-container">

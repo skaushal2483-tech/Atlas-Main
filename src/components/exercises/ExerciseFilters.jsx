@@ -78,9 +78,8 @@ function FilterDropdown({
         <span className="exercise-filter-value">{value}</span>
 
         <span
-          className={`exercise-filter-arrow ${
-            isOpen ? "open" : ""
-          }`}
+          className={`exercise-filter-arrow ${isOpen ? "open" : ""
+            }`}
           aria-hidden="true"
         >
           ▾
@@ -99,9 +98,8 @@ function FilterDropdown({
               type="button"
               role="option"
               aria-selected={value === option}
-              className={`exercise-filter-option ${
-                value === option ? "active" : ""
-              }`}
+              className={`exercise-filter-option ${value === option ? "active" : ""
+                }`}
               onClick={() => {
                 onChange(option);
                 setIsOpen(false);
@@ -132,15 +130,15 @@ function ExerciseFilters({
   resetFilters,
 }) {
   const hasActiveFilters =
-    category !== "All Categories" ||
-    difficulty !== "All Levels" ||
-    equipment !== "All Equipment";
+    category !== "All" ||
+    difficulty !== "All" ||
+    equipment !== "All";
 
   return (
     <section className="exercise-filters" aria-label="Exercise filters">
       <div className="exercise-filters-heading">
         <span className="exercise-filters-title">Filters</span>
-        
+
       </div>
 
       <div className="exercise-filters-controls">

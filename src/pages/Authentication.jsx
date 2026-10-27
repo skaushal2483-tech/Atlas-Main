@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useTheme } from "../context/ThemeContext";
+
 
 import Navbar from "../components/shared/Navbar";
 import Footer from "../components/shared/Footer";
@@ -8,8 +10,10 @@ import Signup from "../components/authentication/Signup";
 
 import "../styles/authentication/Auth.css";
 
-function Auth({ isDark, setIsDark }) {
+function Auth() {
   const [isSignup, setIsSignup] = useState(false);
+  const { isDark, setIsDark } = useTheme();
+
 
   return (
     <div className={`auth-page ${isDark ? "dark" : "light"}`}>

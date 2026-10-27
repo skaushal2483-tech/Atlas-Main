@@ -1,6 +1,4 @@
-/* =========================================
-   ATLAS — PERSONAL RECORDS PAGE
-========================================= */
+
 
 .pr-page {
   width: 100%;
@@ -19,7 +17,6 @@
     color 0.5s ease;
 }
 
-/* Main content — matches Dashboard */
 .pr-page-main {
   flex: 1;
   min-width: 0;
@@ -40,7 +37,6 @@
     color 0.5s ease;
 }
 
-/* Match Dashboard scrollbar */
 .pr-page-main::-webkit-scrollbar {
   width: 7px;
 }
@@ -58,14 +54,12 @@
   background: var(--text2);
 }
 
-/* Content container */
 .pr-page-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Personal records grid */
 .pr-page-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -1,6 +1,4 @@
-/* =========================================
-   ATLAS — CENTERED PERSONAL RECORD CARD
-========================================= */
+
 
 .pr-display-card {
   position: relative;
@@ -32,7 +30,6 @@
     box-shadow 0.25s ease;
 }
 
-/* Subtle top accent */
 .pr-display-card:hover::before {
   left: 0;
   right: 0;
@@ -56,7 +53,6 @@
   outline-offset: 4px;
 }
 
-/* Centered content */
 .pr-display-card-content {
   width: 100%;
 
@@ -67,7 +63,6 @@
   text-align: center;
 }
 
-/* Exercise name */
 .pr-display-card-label {
   max-width: 100%;
 
@@ -82,7 +77,6 @@
   overflow-wrap: anywhere;
 }
 
-/* Weight */
 .pr-display-card-value {
   display: flex;
   align-items: baseline;
@@ -111,7 +105,6 @@
   letter-spacing: 1px;
 }
 
-/* Divider */
 .pr-display-card-divider {
   width: 100%;
   max-width: 280px;
@@ -122,7 +115,6 @@
   background: var(--border);
 }
 
-/* Personal best footer */
 .pr-display-card-bottom {
   display: flex;
   flex-direction: column;
@@ -147,7 +139,6 @@
   font-size: 12px;
 }
 
-/* Delete cross */
 .pr-display-card-delete {
   position: absolute;
   top: 12px;

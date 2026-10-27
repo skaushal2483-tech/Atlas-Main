@@ -2,13 +2,19 @@ import AddLogCard from "./AddLogCard";
 import DayLogCard from "./DayLogCard";
 import "../../styles/meals/YourJourney.css";
 
-function YourJourney({ logs = [], onAddLog, onOpenLog }) {
-  const sortedLogs = [...logs].sort((a, b) => b.date.localeCompare(a.date));
+function YourJourney({
+  logs = [],
+  onAddLog,
+  onOpenLog,
+  onDeleteLog,
+}) {
+  const sortedLogs = [...logs].sort((a, b) =>
+    b.date.localeCompare(a.date)
+  );
 
   return (
     <section className="your-journey">
       <header className="your-journey-header">
-
         <h2 className="your-journey-title">
           Nutrition <span>Journal</span>
         </h2>
@@ -23,7 +29,10 @@ function YourJourney({ logs = [], onAddLog, onOpenLog }) {
           </span>
         )}
 
-        <div className="your-journey-divider" aria-hidden="true">
+        <div
+          className="your-journey-divider"
+          aria-hidden="true"
+        >
           <span />
           <span />
           <span />
@@ -38,11 +47,11 @@ function YourJourney({ logs = [], onAddLog, onOpenLog }) {
             key={log.date}
             log={log}
             onClick={onOpenLog}
+            onDelete={onDeleteLog}
           />
         ))}
       </div>
     </section>
-
   );
 }
 

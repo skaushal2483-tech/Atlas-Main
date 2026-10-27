@@ -47,7 +47,6 @@ function PersonalRecords() {
     };
   }, []);
 
-  // Find the highest recorded weight for each fixed exercise.
   const dashboardRecords = FIXED_EXERCISES.map((exercise) => {
     const matchingRecords = records.filter(
       (record) =>

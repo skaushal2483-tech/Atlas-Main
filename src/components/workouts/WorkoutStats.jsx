@@ -68,7 +68,6 @@ function WorkoutStats({ workouts = [] }) {
             return sum + exerciseVolume;
           }
 
-          // Support older saved workouts.
           const sets = Math.max(
             0,
             Number(exercise.sets) || 0

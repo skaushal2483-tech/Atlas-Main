@@ -7,12 +7,6 @@ function ExerciseCard({ exercise, onClick }) {
         <article
             className="exercise-card"
             onClick={() => onClick(exercise)}
-            onKeyDown={(event) => {
-                if (event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                    onClick(exercise);
-                }
-            }}
             role="button"
             tabIndex={0}
             aria-label={`View details for ${exercise.name}`}

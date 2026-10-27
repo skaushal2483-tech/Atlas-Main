@@ -5,14 +5,15 @@ import PersonalRecords from "../components/dashboard/PersonalRecords";
 import Metrics from "../components/dashboard/Metrics";
 
 import "../styles/dashboard/Dashboard.css";
+import { useTheme } from "../context/ThemeContext";
 
-function Dashboard({ isDark, setIsDark }) {
+
+function Dashboard() {
+  const { isDark, setIsDark } = useTheme();
+
   return (
     <div className="dashboard">
-      <Sidebar
-        isDark={isDark}
-        setIsDark={setIsDark}
-      />
+      <Sidebar/>
 
       <main className="dashboard-main">
         <Header />

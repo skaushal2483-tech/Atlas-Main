@@ -3,7 +3,6 @@
     margin-bottom: 32px;
 }
 
-/* Heading */
 .meal-list-header {
     margin-bottom: 24px;
     text-align: center;
@@ -41,7 +40,6 @@
     line-height: 1.5;
 }
 
-/* Separator below heading */
 .meal-list-divider {
     width: 100%;
     height: 1px;
@@ -49,7 +47,6 @@
     background: var(--border);
 }
 
-/* Horizontal card grid */
 .meal-list-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -57,7 +54,6 @@
     gap: 20px;
 }
 
-/* Add Meal card */
 .meal-list-add-card {
     display: flex;
     align-items: center;
@@ -119,7 +115,6 @@
     outline-offset: 3px;
 }
 
-/* Saved meal cards */
 .meal-list-card {
     min-width: 0;
     overflow: hidden;
@@ -138,7 +133,6 @@
     border-color: var(--primary);
 }
 
-/* Meal heading and total calories */
 .meal-list-card-header {
     display: flex;
     align-items: center;
@@ -167,7 +161,6 @@
     white-space: nowrap;
 }
 
-/* Food entries */
 .meal-list-foods {
     display: flex;
     flex-direction: column;
@@ -198,7 +191,6 @@
     line-height: 1.5;
 }
 
-/* Protein, carbs and fats */
 .meal-list-macros {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));

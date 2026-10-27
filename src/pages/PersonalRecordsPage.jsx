@@ -7,16 +7,19 @@ import PRDisplayCard from "../components/personalRecords/PRDisplayCard";
 import PRModal from "../components/personalRecords/PRModal";
 
 import "../styles/personalRecords/PersonalRecordsPage.css";
+import { useTheme } from "../context/ThemeContext";
+
 
 const STORAGE_KEY = "atlas_personal_records";
 
-function PersonalRecordsPage({ isDark, setIsDark }) {
+function PersonalRecordsPage() {
+  const { isDark, setIsDark } = useTheme();
+
   const [records, setRecords] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [recordToEdit, setRecordToEdit] = useState(null);
   const [hasLoaded, setHasLoaded] = useState(false);
 
-  // Load saved personal records.
   useEffect(() => {
     try {
       const savedRecords = localStorage.getItem(STORAGE_KEY);
@@ -35,7 +38,6 @@ function PersonalRecordsPage({ isDark, setIsDark }) {
     }
   }, []);
 
-  // Save records whenever they change.
   useEffect(() => {
     if (!hasLoaded) return;
 
@@ -103,7 +105,7 @@ function PersonalRecordsPage({ isDark, setIsDark }) {
 
   return (
     <div className="pr-page">
-      <Sidebar isDark={isDark} setIsDark={setIsDark} />
+      <Sidebar/>
 
       <main className="pr-page-main">
         <div className="pr-page-container">
